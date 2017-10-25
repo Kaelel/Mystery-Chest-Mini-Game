@@ -1,0 +1,86 @@
+
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;==;{get;_{userid}_mcreg};0; You need to register first, {username} !
+
+    > Type `!mc_reg` to start!;
+
+
+
+{if;==;{get;_throwcount};;{set;_throwcount;0}}
+{if;==;{get;_{userid}_grabcavm};;{set;_{userid}_grabcavm;0}}
+{if;==;{get;_{userid}_grabavm};;{set;_{userid}_grabavm;0}}
+{if;<=;{get;_throwcount};0;{set;_throwcount;0}}
+
+{set;cooldown;{exec;cooldown;5 grab}}
+{if;==;{get;cooldown};true;
+
+{if;==;{args;0};wooden;
+{if;>=;{get;_throwwooden};1;
+{username} grabbed a <:woodenchest:322454198279208960> Wooden Chest on the ground!
+{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}}
+{set;_throwwooden;{math;-;{get;_throwwooden};1}}
+;There's no Wooden Chest on the ground!};
+{if;==;{args;0};silver;
+{if;>=;{get;_throwsilver};1;
+{username} grabbed a <:silverchest:322454198157443089> Silver Chest on the ground!
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+{set;_throwsilver;{math;-;{get;_throwsilver};1}}
+;There's no Silver Chest on the ground!};
+{if;==;{args;0};titan;
+{if;>=;{get;_throwtitan};1;
+{username} grabbed a <:titanchest:322454197612314626> Titan Chest on the ground!
+{set;_{userid}_titancount;{math;+;{get;_{userid}_titancount};1}}
+{set;_throwtitan;{math;-;{get;_throwtitan};1}}
+;There's no Titan Chest on the ground!};
+
+{if;>=;0;{get;_throwcount};There's nothing on the ground, {username}! 👀;
+{username} grabbed **1 💎 Diamond !**
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};1}}
+{set;_throwcount;{math;-;{get;_throwcount};1}}}
+{set;_{userid}_grabcavm;{math;+;{get;_{userid}_grabcavm};1}}
+
+{trim;
+{if;==;0;{get;_{userid}_grabavm};
+{if;>=;{get;_{userid}_grabcavm};125;
+{username} just unlocked the 🦆**"Uncle Scrooge I"** Achievement!
+
+{if;>;{get;_throwcount};1250;
+- 1250 💎 Diamonds stole from the ground!
+{set;_throwcount;{math;-;{get;_throwcount};1250}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};1250}}
+;
+- All of the 💎 Diamonds left on the ground were stolen !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_throwcount}}}
+{set;_throwcount;0}}
+{set;_{userid}_grabavm;1}}}
+{if;==;1;{get;_{userid}_grabavm};
+{if;>=;{get;_{userid}_grabcavm};250;
+{newline}{username} just unlocked the 🦆**"Uncle Scrooge II"** Achievement!
+
+{if;>;{get;_throwcount};2500;
+- 2500 💎 Diamonds stole from the ground!
+{set;_throwcount;{math;-;{get;_throwcount};2500}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};2500}}
+;
+- All of the 💎 Diamonds left on the ground were stolen !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_throwcount}}}
+{set;_throwcount;0}}
+{set;_{userid}_grabavm;2}}}
+{if;==;2;{get;_{userid}_grabavm};
+{if;>=;{get;_{userid}_grabcavm};500;
+{username} just unlocked the 🦆**"Uncle Scrooge III"** Achievement!
+
+{if;>;{get;_throwcount};5000;
+- 5000 💎 Diamonds stole from the ground!
+{set;_throwcount;{math;-;{get;_throwcount};5000}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};5000}}
+;
+- All of the 💎 Diamonds left on the ground were stolen !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_throwcount}}}
+{set;_throwcount;0}}
+{set;_{userid}_grabavm;3}}}
+}
+}}}
+; You need to wait, {username}!}
+
+}

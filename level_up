@@ -1,0 +1,42 @@
+{trim;
+{if;>=;{get;_{userid}_petxp};{get;_{userid}_petmaxxp};
+{void;{splice;{get;_petowners};{indexof;{get;_petowners};{get;_{userid}_petnick};1}}}
+__**🔱 Level Up !!**__
+{set;_{userid}_petlvl;{math;+;{get;_{userid}_petlvl};1}}
+{set;_{userid}_manacost;{math;+;{get;_{userid}_manacost};1}}
+{set;_{userid}_lvlxp;{math;-;{get;_{userid}_petxp};{get;_{userid}_petmaxxp}}}
+{set;_{userid}_petxp;0}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_lvlxp}}}
+{set;_{userid}_fpetminxp;{math;+;{get;_{userid}_fpetminxp};2}}
+{set;_{userid}_fpetmaxxp;{math;+;{get;_{userid}_fpetmaxxp};2}}
+{set;_{userid}_petmaxxp;{math;*;{get;_{userid}_petmaxxp};2.5}}
+{set;_{userid}_petmaxhp;{math;+;{get;_{userid}_petmaxhp};5}}
+{set;_{userid}_pethp;{get;_{userid}_petmaxhp}}
+{set;_{userid}_manacount;{get;_{userid}_maxmana}}
+{set;_{userid}_petmindmg;{math;+;{get;_{userid}_petmindmg};2}}
+{set;_{userid}_petmaxdmg;{math;+;{get;_{userid}_petmaxdmg};2}}
+{set;_{userid}_minpdsteal;{math;+;50;{get;_{userid}_minpdsteal}}}
+{set;_{userid}_maxpdsteal;{math;+;50;{get;_{userid}_maxpdsteal}}}
+
+{if;==;{get;_{userid}_petlvlavm};0;
+{if;>=;{get;_{userid}_petlvl};3;{username} just unlocked the 🥚**"I wanna be the very best! I"** Achievement!
+
++ 10k :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};10000}}
+  {set;_{userid}_petlvlavm;1}}}
+
+{if;==;{get;_{userid}_petlvlavm};1;
+{if;>=;{get;_{userid}_petlvl};5;{username} just unlocked the 🥚**"I wanna be the very best! II"** Achievement!
+
++ 25k :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};25000}}
+  {set;_{userid}_petlvlavm;2}}}
+
+{if;==;{get;_{userid}_petlvlavm};2;
+{if;>=;{get;_{userid}_petlvl};10;{username} just unlocked the 🥚**"I wanna be the very best! III"** Achievement!
+
++ 50k :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};50000}}
+  {set;_{userid}_petlvlavm;3}}}
+  }
+}

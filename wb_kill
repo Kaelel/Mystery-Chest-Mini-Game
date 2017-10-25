@@ -1,0 +1,35 @@
+{if;<=;{get;_wbhp};0; 
+{set;_wbhp;0}
+{set;_wbcount;0}
+{set;_wbtimercheck;0}
+{set;_{userid}_wbdiamondincr;{math;*;{get;_wbmaxhp};5}}
+{set;_{userid}_wbxpincr;{ceil;{math;/;{get;_wbmaxhp};5}}}
+<@&367637854068670465>,
+
+☠ ***{username} has just slained {get;_wb} !!!*** 
+You won **{get;_{userid}_wbdiamondincr}** :gem: Diamonds and **{get;_{userid}_wbxpincr}** XP !
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_wbxpincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_wbdiamondincr}}}
+
+*Every Players that have participated during the Fight can now use `!wb reward` to get their Rewards!* 🎊
+{set;_wbrwd;1}
+
+    *-...Another one will replace it soon...*
+
+{timer;
+<@&367637854068670465>
+
+**<:TimerOh:334815692249497600> A New World Boss appeared!**
+
+    > Type `!wb fight` to start!
+
+
+{set;_wb;{randchoose;<:grrr:277227965023256577> Howee;<:wot:283570586792230912> Bianca;👒 Lemming;👕 Mildan;🐈 Neila;🐝 MetxChris;🐝 DrJesusman;🐝 RyanGH;🐺 SlyWolf;🐝 Jyoo; 🐝 Waidot; 🐝 Virtuous; 🐝 Ryan; 🐝 DeliciousSpaghettiNoodles; <:titansmasher:261175566336524289> Titansmasher; Colblitz; Psychocane; 🌵 Cactus; 🛡 The Pancakes Knight 🥞; <:DarkLord:348254312432140288> DarkLord's SoulShard }}
+{set;_wbrwd;0}
+{set;_wbmaxhp;{randint;1525;3250}}
+{set;_wbhp;{get;_wbmaxhp}}
+{set;_dscount;{math;-;{get;_dscount};{get;_wbmaxhp}}}
+;1d}
+{execcc;level_up}
+
+}

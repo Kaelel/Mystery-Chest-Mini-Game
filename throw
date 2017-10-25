@@ -1,0 +1,109 @@
+{if;==;{get;_throwwooden};;{set;_throwwooden;0}}
+{if;==;{get;_throwsilver};;{set;_throwsilver;0}}
+{if;==;{get;_throwtitan};;{set;_throwtitan;0}}
+{if;>;{get;_mfairycount};1;{set;_mfairycount;1}}
+{if;>;{get;_fairycount};12;{set;_fairycount;12}}
+
+{//;Konami Code :}
+{if;==;{get;_{userid}_konamicode};;{set;_{userid}_konamicode;0}}
+{if;==;{get;_throwfairycount};;{set;_throwfairycount;0}}
+{if;==;{get;_throwmfairycount};;{set;_throwmfairycount;0}}
+{if;==;{get;_throwwoodencount};;{set;_throwwoodencount;0}}
+
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;==;{get;_{userid}_mcreg};0; You need to register, {username} !
+
+    > Type `!mc_reg` to start!;
+
+{if;==;{args;0};wooden;
+{if;>=;{get;_{userid}_woodencount};1;
+{username} threw a <:woodenchest:322454198279208960> Wooden Chest on the ground !
+http://i.imgur.com/rGIaBJD.png
+{set;_{userid}_woodencount;{math;-;{get;_{userid}_woodencount};1}}
+{set;_throwwooden;{math;+;{get;_throwwooden};1}}
+{set;_throwwoodencount;{math;+;{get;_throwwoodencount};1}}
+;You don't have any Wooden Chest to throw!};
+
+{if;==;{args;0};mfairy;
+{if;==;{get;_mfairycount};0;There's no Mama Fairy !;
+:boom: {username} threw a Moma Fairy on the ground !!!
+
+A {randchoose;<:woodenchest:322454198279208960> Wooden Chest{set;_throwwooden;{math;+;{get;_throwwooden};1}};<:woodenchest:322454198279208960> Wooden Chest{set;_throwwooden;{math;+;{get;_throwwooden};1}};<:woodenchest:322454198279208960> Wooden Chest{set;_throwwooden;{math;+;{get;_throwwooden};1}};<:silverchest:322454198157443089> Silver Chest{set;_throwsilver;{math;+;{get;_throwsilver};1}};<:silverchest:322454198157443089> Silver Chest{set;_throwsilver;{math;+;{get;_throwsilver};1}};<:titanchest:322454197612314626> Titan Chest{set;_throwtitan;{math;+;{get;_throwtitan};1}}} dropped on the ground!
+{set;_throwmfairycount;{math;+;{get;_throwmfairycount};1}}
+{set;_mfairycount;0}{timer;{set;_mfairycount;1}
+<:mammafairy:326115876963221515>**A random MamaFairy appeared!** 
+Type `​​​​​!mpick`​​​​​ to pick it up!;{randint;15;32}m}
+};
+
+{if;==;{args;0};fairy;
+{if;==;{get;_fairycount};0;There's no Fairies !;
+:boom: {username} threw a Fairy on the ground !!! {randchoose;You Monster ! :frowning:;Uhmm...;Animal!;Savage ! D:;Poor Fairy  :weary:}
+{set;_fairycount;{math;-;{get;_fairycount};1}}
+{timer;{set;_fairycount;{math;+;{get;_fairycount};1}}
+<:fairy:322454197691744277> **A random Fairy appeared!** 
+Type `​​!pick`​​ to pick it up!;{randint;8;25}m}
+{set;~throwincr;{randint;25;75}} **+ {get;~throwincr} :gem: Diamonds** dropped on the ground !
+{set;_throwcount;{math;+;{get;_throwcount};{get;~throwincr}}}
+{set;_throwfairycount;{math;+;{get;_throwfairycount};1}}
+};
+{if;>;{argslength};3;https://www.youtube.com/watch?v=gAYL5H46QnQ;
+{if;==;{get;_throwcount};;{set;_throwcount;0}}
+{if;==;{get;_{userid}_throwcavm};;{set;_{userid}_throwcavm;0}}
+{if;==;{get;_{userid}_throwavm};;{set;_{userid}_throwavm;0}}
+{set;cooldown;{exec;cooldown;5 Throw}}
+{if;==;{get;cooldown};true;
+{if;>=;{get;_{userid}_diamondcount};1;{username} has just thrown **1 💎 Diamond** on the ground!
+{trim;
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};1}}
+{set;_throwcount;{math;+;{get;_throwcount};1}}
+{set;_{userid}_throwcavm;{math;+;{get;_{userid}_throwcavm};1}}
+
+{trim;
+{if;==;0;{get;_{userid}_throwavm};
+{if;>=;{get;_{userid}_throwcavm};250;
+{newline}{username} just unlocked the 🙏**"Good Sir! I"** Achievement!
+
++ 2500 💎 Diamonds added to the ground !
+{set;_throwcount;{math;+;{get;_throwcount};2500}}
+{set;_{userid}_throwavm;1}}}
+{if;==;1;{get;_{userid}_throwavm};
+{if;>=;{get;_{userid}_throwcavm};500;
+{username} just unlocked the 🙏**"Good Sir! II"** Achievement!
+
++ 5000 💎 Diamonds added to the ground !
+{set;_throwcount;{math;+;{get;_throwcount};5000}}
+{set;_{userid}_throwavm;2}}}
+{if;==;2;{get;_{userid}_throwavm};
+{if;>=;{get;_{userid}_throwcavm};1000;
+{username} just unlocked the 🙏**"Good Sir! III"** Achievement!
+
++ 10000 💎 Diamonds added to the ground !
+{set;_throwcount;{math;+;{get;_throwcount};10000}}
+{set;_{userid}_throwavm;3}}}
+}
+{//;Konami Code}
+{if;>;{get;_throwfairycount};1;
+{if;==;{get;_{userid}_konamicode};0;
+{set;_{userid}_konamicode;1}
+{timer;{set;_{userid}_konamicode;0}{set;_throwfairycount;0}{set;_throwmfairycount;0}{set;_throwwoodencount;0};1d}
+}}
+{if;==;{get;_{userid}_konamicode};1;
+{if;>=;{get;_throwfairycount};3;
+{if;>=;{get;_throwwoodencount};2;
+{if;>=;{get;_throwmfairycount};1;
+{randchoose;ᵏ;ᵒ;ⁿ;ᵃ;ᵐ;ᶦ; ;ᶜ;ᵒ;ᵈ;ᵉ}
+{randchoose;{set;_throwwooden;{math;+;{get;_throwwooden};5}};{set;_throwwooden;{math;+;{get;_throwwooden};5}};{set;_throwwooden;{math;+;{get;_throwwooden};5}};{set;_throwsilver;{math;+;{get;_throwsilver};5}};{set;_throwsilver;{math;+;{get;_throwsilver};5}};{set;_throwtitan;{math;+;{get;_throwtitan};5}}}
+{set;_throwfairycount;0}
+{set;_throwmfairycount;0}
+{set;_throwwoodencount;0}
+{set;_{userid}_konamicode;0}
+
+}}}}
+}
+;You don't have enough 💎 Diamonds to do that, {username} 👀};Please wait **5** more seconds, {username}..}
+}
+}
+}
+}
+
+}

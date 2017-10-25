@@ -1,0 +1,252 @@
+{if;==;{get;_mcreg};;{set;_mcreg;[]}}
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;>;{get;_{userid}_diamondcount};0;{set;_{userid}_mcreg;1}
+{if;==;-1;{indexof;{get;_mcreg};{userid}};
+{push;{get;_mcreg};{userid}}
+}}
+
+{if;==;{get;_{userid}_mcreg};0; You need to register first, {username} !
+
+    > Type `!mc_reg` to start!;
+
+{if;==;{get;_darkshop};;{set;_darkshop;0}}
+{if;==;{get;_tdarkshop};;{set;_tdarkshop;0}}
+{if;==;{get;_ttdarkshop};;{set;_ttdarkshop;0}}
+{if;==;{get;_dsdcount};;{set;_dsdcount;0}}
+
+{if;==;{get;_{userid}_relicsincr2};{get;_{userid}_relicsincr2};{set;_{userid}_relicsincr2;0}}
+
+{if;==;{get;_darkshop};0;
+  The Mysterious Merchant isn't in town! 🙁;
+  {if;==;{get;_tdarkshop};0;{timer;{set;_darkshop;0} <:darkshop:329662370169487361> Time to leave! Come back with more Diamonds next time.. ! 👋👀;20m}}
+  {set;_tdarkshop;1}
+  {if;==;{get;_ttdarkshop};1;
+{set;_ttdarkshop;0}
+{timer;
+{set;_ttdarkshop;1}{set;_tdarkshop;0}{set;_darkshop;1}
+<:darkshop:329662370169487361>**| A Mysterious Merchant is in Town!**
+Type `!ds list` to visit his store!;2h}
+  }
+{switch;{args;0}
+  ;list;
+  <:darkshop:329662370169487361>__**| Welcome to the Dark Shop !**__
+  *"-Hey there young hero! Come closer, don't be afraid.. 👀"*
+  
+  __**Stocks :**__
+      • <:Cerberus:348247151790391308> Cerberus - 500K 💎
+      • 🗺 Pet Map (Full) - 50K 💎
+      • <:relic:325072418701967375> Relics [{ceil;{math;*;2500;{get;_{userid}_bosincr}}}] - 5k 💎 
+      • <:mysterychest:325125261513195521> Mystery Chest - 375 💎 
+      • \☸ Dark Wheel of Misfortune - {if;>=;{get;_{userid}_dsspin};1;{get;_{userid}_dsspin} Free Spin(s)!;10 K 💎}
+      • 🎟 Lottery Ticket - 500 💎
+  
+  Type `!ds buy <item>` to buy!
+
+  __**Needs :**__
+      {if;==;{get;_{userid}_petcount};1;• {get;_{userid}_petname}{get;_{userid}_petnick} - {math;*;15;{get;_{userid}_petlvl}}k 💎;}
+      • 🌟 Invincibility Star - 7k5 💎 
+      • ⭐ Regen Star - 7k5 💎 
+      • <:mana:268505067735220224> Mana - 2k5 💎
+      • 🍪 Cookie - 100 💎
+  
+  Type `!ds sell <item>` to sell!
+  
+      *>The Mysterious Merchant has collected {get;_dsdcount} 💎 Diamonds until now!*
+  
+;buy;
+
+{set;cooldown;{exec;cooldown;4 buy}}
+{if;==;{get;cooldown};true;
+
+
+{if;==;{args;1};cerberus;
+{if;==;0;{get;_{userid}_petcount};
+{if;>=;{get;_{userid}_diamondcount};500000;
+{username} just acquiered <:Cerberus:348247151790391308> Cerberus 😈!!!**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};500000}}
+{set;_{userid}_petcount;1}
+{set;_{userid}_petlvl;1}
+{set;_{userid}_petname;<:Cerberus:348247151790391308>}
+{set;_{userid}_pethp;125}
+{set;_{userid}_petmaxhp;125}
+{set;_{userid}_petmindmg;4}
+{set;_{userid}_petmaxdmg;9}
+{set;_{userid}_petxp;0}
+{set;_{userid}_petmaxxp;50}
+{set;_{userid}_fpetminxp;1}
+{set;_{userid}_fpetmaxxp;3}
+{set;_{userid}_manacost;6}
+{set;_{userid}_manacount;100}
+{set;_{userid}_minpdsteal;100}
+{set;_{userid}_maxpdsteal;200}
+;You don't have enough 💎 Diamonds!}
+;You already have a pet!}}
+
+{if;==;{args;1};relics;
+{if;<=;5000;{get;_{userid}_diamondcount};
+{set;_{userid}_relicsincr2;{math;*;2500;{get;_{userid}_bosincr}}}
+{username} bought **{ceil;{get;_{userid}_relicsincr2}} <:relic:325072418701967375> Relics!**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};5000}}
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicsincr2};{get;_{userid}_relicscount}}}
+{set;_dsdcount;{math;+;{get;_dsdcount};5000}}
+;You don't have enough 💎 Diamonds, {username}! 🙁}}
+    
+{if;==;{args;1};map;
+{if;>=;{get;_{userid}_diamondcount};50000;
+{username} has just bought the **Full 🗺 Pet Map !**
+{set;_{userid}_petmap;2}
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};50000}}
+;You don't have enough 💎 Diamonds, {username}! 🙁}}
+
+{if;==;{args;1};mysterychest;
+{if;>=;{get;_{userid}_diamondcount};375;
+{if;>;{args;2};0;
+{set;_{userid}_diamondincr2;1}{set;_{userid}_diamondincr2;{math;*;375;{args;2}}}
+{if;<;{get;_{userid}_diamondincr2};{get;_{userid}_diamondcount};
+{username} bought **{args;2}** {randchoose;<:woodenchest:322454198279208960> Wooden Chest(s),{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};{args;2}}};<:silverchest:322454198157443089> Silver Chest(s),{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};{args;2}}};<:titanchest:322454197612314626> Titan Chest(s),{set;_{userid}_titancount;{math;+;{get;_{userid}_titancount};{args;2}}}} for **{get;_{userid}_diamondincr2} 💎 Diamonds !**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr2}}}
+{set;_dsdcount;{math;+;{get;_dsdcount};{get;_{userid}_diamondincr2}}}
+;You don't have enough Diamonds, {username}! 🙁};Please, enter a valid number!};You don't have enough 💎 Diamonds, {username}! 🙁}}
+
+{if;==;{args;1};spin;
+{if;<=;10000;{get;_{userid}_diamondcount};
+{username} bought a \☸ **Wheel Spin!**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};10000}}
+{set;_{userid}_dsspin;{math;+;{get;_{userid}_dsspin};1}}
+{set;_dsdcount;{math;+;{get;_dsdcount};10000}}
+;You don't have enough 💎 Diamonds, {username}! 🙁}}
+
+{if;==;{args;1};ticket;
+{if;>=;{get;_{userid}_diamondcount};500;
+{if;==;-1;{indexof;{get;_lotterymembers};{userid}};
+{username} bought a :tickets: **Lottery Ticket** for 500 :gem: Diamonds !
+{void;{push;{get;_lotterymembers};{userid}}}
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};500}}
+{set;_throwcount;{math;+;{get;_throwcount};500}}
+;You already bought a :tickets: Lottery Ticket, {username}!}
+;You don't have enough :gem: Diamonds, {username} !}}
+
+
+;Don't spam the Mysterious Merchant ! 👀}
+
+
+
+;sell;
+
+{if;==;{args;1};pet;
+{if;==;{get;_{userid}_petcount};1;
+{set;_{userid}_diamondincr;{math;*;{get;_{userid}_petlvl};15000}}
+{username} just sold {get;_{userid}_petname}{get;_{userid}_petnick} to the Dark Shop, for {get;_{userid}_diamondincr} 💎 Diamonds !
+{set;_{userid}_petcount;0}
+{set;_{userid}_xpos;0}{set;_{userid}_ypos;0}{set;_{userid}_pos;🏰 Yort Kingdom}
+{set;_{userid}_petlvl;1}
+{set;_{userid}_petnick;{username}'s Pet}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+;You don't have any pet, {username} 🙁!}}
+
+{if;==;{args;1};invincibility;
+{if;>;{get;_{userid}_invincstar};0;
+{username} sold an 🌟 Invincibility Star for **7500** 💎 Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};7500}}
+{set;_{userid}_invincstar;{math;-;{get;_{userid}_invincstar};1}}
+{set;_dsdcount;{math;-;{get;_dsdcount};7500}}
+;You don't have any 🌟 Invincibility Star, {username}! 🙁}}
+
+{if;==;{args;1};regen;
+{if;>;{get;_{userid}_regenstar};0;
+{username} sold a ⭐ Regen Star for **7500** 💎 Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};7500}}
+{set;_{userid}_regenstar;{math;-;{get;_{userid}_regenstar};1}}
+{set;_dsdcount;{math;-;{get;_dsdcount};7500}}
+;You don't have any ⭐ Regen Star, {username}! 🙁}}
+
+{if;==;{args;1};cookie;
+{if;>;{args;2};0;
+{if;<;{get;_{userid}_cookiecount};{args;2};
+You don't have enough Cookies to sell, {username}! 🙁;
+{set;_{userid}_cookieincr;{math;*;{args;2};100}}
+{username} sold {args;2} Cookie(s) for **{get;_{userid}_cookieincr} 💎 Diamonds !**
+{set;_{userid}_cookiecount;{math;-;{get;_{userid}_cookiecount};{args;2}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_cookieincr}}}
+{set;_dsdcount;{math;-;{get;_dsdcount};{get;_{userid}_cookieincr}}}
+}}}
+
+{if;==;{args;1};mana;
+{if;<=;{get;_{userid}_manapotion};0;
+{username} don't have enough <:mana:268505067735220224> Mana Potion to sell! 🙁;
+{username} sold 1 <:mana:268505067735220224> Mana Potion for **2,500 💎 Diamonds !**
+{set;_{userid}_manapotion;{math;-;{get;_{userid}_manapotion};1}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};2500}}
+{set;_dsdcount;{math;-;{get;_dsdcount};2500}}
+}}
+
+
+;lottery;
+
+{if;==;{get;_lotterytimercheck};0;
+{set;_lotterytimercheck;1}
+{set;_lhours;{time;HH}} {set;_lminutes;{time;mm}} {set;_lsecondes;{time;ss}}
+;
+{set;_lthours;{abs;{math;-;{time;HH};{get;_lhours}}}}{set;_ltminutes;{abs;{math;-;{time;mm};{get;_lminutes}}}}{set;_ltsecondes;{abs;{math;-;{time;ss};{get;_lsecondes}}}}
+}
+
+
+{if;==;{get;_lottery};0;
+There's no Lottery running for now!
+
+    > **{username;{get;_lotterywinner}}** won the last Lottery for **{get;_lotterybait} :gem: Diamonds !** 👏
+
+;The Lottery ends in {math;-;23;{get;_lthours}} Hours {math;-;59;{get;_ltminutes}} Minutes {math;-;59;{get;_ltsecondes}} Seconds ! 
+
+> Type `!ds buy ticket` :tickets: to participate!
+
+    > The winner grabs all the gambled :gem: Diamonds and all ones on the Ground!
+}
+
+;spin;
+{set;cooldown;{exec;cooldown;86400 cddsspin}}
+{if;==;{get;cooldown};true;{set;_{userid}_dsspin;{math;+;{get;_{userid}_dsspin};1}}}
+{if;>=;{get;_{userid}_dsspin};1;
+{set;_{userid}_dsspin;{math;-;{get;_{userid}_dsspin};1}}
+{set;spin;{send;<#344079052165873665>; 💎 }} 
+{//;Channels Switch :
+<#344079052165873665><#243673063500152834>}
+{repeat;{edit;{get;spin};
+{set;_{userid}_dssreward;{randchoose;<:relic:325072418701967375>;💎;🍪;<:mysterychest:325125261513195521>;🌟;⭐;<:mana:268505067735220224>}}
+{get;_{userid}_dssreward}
+};6}
+{trim;
+{if;==;{get;_{userid}_dssreward};💎;
+{set;_{userid}_dssreward;15 K 💎 Diamonds}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};15000}}}
+{if;==;{get;_{userid}_dssreward};🍪;
+{set;_{userid}_dssreward;25  🍪 Cookies}
+{set;_{userid}_cookiecount;{math;+;{get;_{userid}_cookiecount};25}}}
+{if;==;{get;_{userid}_dssreward};⭐;
+{set;_{userid}_dssreward;2 ⭐ Regen Stars}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};2}}}
+{if;==;{get;_{userid}_dssreward};🌟;
+{set;_{userid}_dssreward;an 🌟 Invincibility Star}
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};1}}}
+{if;==;{get;_{userid}_dssreward};<:relic:325072418701967375>;
+{set;_{userid}_dssreward;[{ceil;{math;*;5000;{get;_{userid}_bosincr}}}] <:relic:325072418701967375> Relics}
+{set;_{userid}_relicsincr2;{math;*;5000;{get;_{userid}_bosincr}}}}
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};{get;_{userid}_relicsincr2}}}
+{if;==;{get;_{userid}_dssreward};<:mana:268505067735220224>;
+{set;_{userid}_dssreward;2 <:mana:268505067735220224> Mana Potions}
+{set;_{userid}_manapotion;{math;+;{get;_{userid}_manapotion};2}}}
+{if;==;{get;_{userid}_dssreward};<:mysterychest:325125261513195521>;
+{set;_{userid}_dssreward;25 <:mysterychest:325125261513195521> Mystery Chests}
+{randchoose
+;{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};25}}
+;{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};25}}
+;{set;_{userid}_titancount;{math;+;{get;_{userid}_titancount};25}}
+}}
+{timer;{username} won : **{get;_{userid}_dssreward} !**;1s}
+}
+;Come back in : {execcc;tspan;{get;cooldown}} to Spin again, {username}!}
+
+;<:darkshop:329662370169487361> The DarkShop is Open!}
+}
+}
+

@@ -1,0 +1,203 @@
+{if;==;{get;_mcreg};;{set;_mcreg;[]}}
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{//;{if;>;{get;_{userid}_diamondcount};0;{set;_{userid}_mcreg;1}  
+{if;==;-1;{indexof;{get;_mcreg};{userid}};
+{push;{get;_mcreg};{userid}}
+}}
+}
+{if;==;{get;_{userid}_mcreg};1; You're already registered, {username} !;
+Registering {userid}.. 
+
+Initializing..
+{timer;
+** \*\*Welcome\*\* ** to the <:mysterychest:325125261513195521> MysteryChest MiniGame <@{userid}> 👋 !
+
+ > You are the **{length;{get;_mcreg}}th** member!
+
+    > :pushpin: Don't forget to check the Pinned Messages to see a list of commands available !
+
++ 2500 :gem: Diamonds to help your start! 
+;3s}
+{void;{addrole;367637854068670465}}
+{dm;{userid};
+
+<<! You've been automaticaly added to the Mini-Knights Army!>>
+
+    > This allows you to be mentionned for Mini-Game events, such as World Boss, Lottery, Pet Tournament,... 
+
+To remove it, you can just type `!mc mentions off` !
+
+\__\__\__\__\__\__\__\__\__
+
+<:mysterychest:325125261513195521>
+ __**Beginner's Guide :**__
+
+__**I. Main Commands**__
+
+To get started, the commands that you will use the most are : 
+
+    > `!mc claim` = Claim a random chest every 20 Mns to get :gem: Diamonds and <:relic:325072418701967375>
+ Relics.
+        > Type `!mc open wooden 1` to open them!
+    > `!ds spin` to claim your DailyRewards when the :darkshop: MysteryMerchant is in Town.
+        > The Mysterious Merchant  comes back every 2 Hours and stays for 20 Mns.
+    > `!p harvest` every 5 Mns to collect ingredients for the Community's `!p factory`
+        > Everyone is sharing the Factory's ingredients and money !
+
+__**II. Complete Achievements to get Rewards !**__
+
+One of the easiest way to get more Diamonds is to complete the different Achievements, 
+
+    > Type `!achi stats` to check your :trophy: General Achievements progression,
+    > `!bos achi stats` for the <:bos:258557013330624512> Book of Shadows.
+    > `!pet achi stats` for the <:pets:327208070843203584> Pets. (See below)
+
+__**III. Uppgrade your Book of Shadows**__
+
+You can only use <:relic:325072418701967375>
+ Relics to upgrade your <:bos:258557013330624512>
+ Book of Shadow, and get more <:relic:325072418701967375> Relics,
+
+    > Type `!bos stats` to check your Level, Relics multiplicator, and Cost for Next Lvl!
+    > You can also see the Top10 BoS with `!bos ldb`
+
+}
+ {timer;{dm;{userid};
+
+> The easiest way to get more relics is to buy :mysterychest: mysterychests from the <:darkshop:329662370169487361> MysteryMerchant. <:pets:327208070843203584>
+(`!ds buy mysterychest 1`) 
+But it's really expansive, you'd better keep your :gem: Diamonds to buy a Pet!
+
+__**IV. Buy a Pet**__
+
+You can either buy <:pets:327208070843203584> Nova for 25K :gem: at the `!pet shop`, and sell it later to the <:darkshop:329662370169487361> for 15K(^PetLvl) :gem: , 
+    > And start exploring the :map: World ! 
+        > (Lots of new commands, like :crossed_swords: Pet Fight, <:TimerOh:334815692249497600>
+ World Boss, :scroll: Quests, :earth_asia: Explore ... )
+Or wait, claim, pick, gamble, spin, complete achievements.. to buy a better Pet !
+
+__**V. Climb through the Leaderboards !**__
+
+There are 3 different leaderboards, 
+    > `!leaderboard` for :gem: Diamonds.
+    > `!bos ldb` for <:bos:258557013330624512> Book of Shadow levels, 
+    > `!pet tournament` *Soon:tm:...*
+
+
+:pushpin: Check the Pinned Messages for the complete list of commands !
+
+ };3s}
+
+
+{set;_{userid}_mcreg;1}
+{push;{get;_mcreg};{userid}}
+
+{//;MysteryChest Var:}
+{set;_{userid}_diamondcount;2500}
+{set;_{userid}_diamondincr;0}
+{set;_{userid}_relicscount;0}
+{set;_{userid}_relicsincr;0}
+{set;_{userid}_woodencount;0}
+{set;_{userid}_silvercount;0}
+{set;_{userid}_titancount;0}
+
+{//;Bos Var:}
+{set;_{userid}_boslvl;1}
+{set;_{userid}_bosincr;0.25}
+{set;_{userid}_boscost;125}
+{set;_{userid}_bostrue;true}
+{set;_{userid}_bosreg;0}
+
+{//;Achievements Var:}
+{set;_{userid}_diaavm;0}{set;_{userid}_diacavm;0}
+{//;ex: {if;>;{get;_{userid}_diamondcount};{get;_{userid}_diacavm};{set;_{userid}_diacavm;{get;_{userid}_diamondcount}}}
+}
+{set;_{userid}_claimavm;0}{set;_{userid}_claimcavm;0}
+{set;_{userid}_luckyavm;0}
+{set;_{userid}_pickavm;0}{set;_{userid}_pickcavm;0}
+{set;_{userid}_mpickavm;0}{set;_{userid}_mpickcavm;0}
+{set;_{userid}_throwavm;0}{set;_{userid}_throwcavm;0}
+{set;_{userid}_grabavm;0}{set;_{userid}_grabcavm;0}
+{//;Bos Achi}
+{set;_{userid}_relicsavm;0}
+{set;_{userid}_relicscavm;0}
+{set;_{userid}_relicsincravm;0}
+{set;_{userid}_boslvlavm;0}
+{//;Pets Achi}
+{set;_{userid}_petlvlavm;0}
+{set;_{userid}_petfavm;0}{set;_{userid}_petfcavm;0}
+{set;_{userid}_petkavm;0}{set;_{userid}_petkcavm;0}
+
+{//;DarkShop Var}
+
+{set;_{userid}_dsspin;1}
+
+{//;Pets Var}
+{//;Stats}
+{set;_{userid}_petcount;0}
+{set;_{userid}_petname;0;}
+{set;_{userid}_petnick;{username}'s Pet}
+{set;_{userid}_petlvl;1}
+{set;_{userid}_pethp;100}
+{set;_{userid}_petmaxhp;100}
+{set;_{userid}_manacount;100}
+{set;_{userid}_petdmg;0}
+{set;_{userid}_petmindmg;2}{set;_{userid}_petmaxdmg;7}
+{set;_{userid}_petxp;0}{set;_{userid}_petmaxxp;50}
+{set;_{userid}_fpetminxp;1}{set;_{userid}_fpetmaxxp;3}
+{set;_{userid}_manacost;6}
+{set;_{userid}_minpdsteal;50}
+{set;_{userid}_maxpdsteal;150}
+
+{set;_{userid}_regen;0}
+{set;_{userid}_petreg;0}
+
+{//;Inventory+Shop}
+{set;_{userid}_manapotion;0}
+{set;_{userid}_pancakescount;0}
+{if;==;{get;_spancakecount};;{set;_spancakecount;0}}
+{set;_{userid}_cookiecount;0}
+{if;==;{get;_scookiecount};;{set;_scookiecount;0}}
+{set;_{userid}_cookierecipe;0}
+{set;_{userid}_invincstar;0}
+{set;_{userid}_invincibility;0}
+{set;_{userid}_regenstar;0}
+{set;_{userid}_petrename;0}
+
+{//;RPG}
+{set;_{userid}_xpos;0}
+{set;_{userid}_ypos;0}
+{set;_{userid}_pos;🏰 Yort Kingdom}
+
+{set;_{userid}_questcount;0}
+{set;_{userid}_qgate;0}
+
+{set;_{userid}_note;0}
+
+
+}
+
+
+
+
+
+{//;Other Var : 
+_fairycount
+_mfairycount
+_throwcount
+_throwwooden
+_throwsilver
+_throwtitan
+_darkshop
+_tdarkshop
+_ttdarkshop
+_dscount
+
+Lists : 
+
+_mcreg[]
+_lotterymembers[]
+_petowners[]
+_bosldb[]
+
+}

@@ -1,0 +1,67 @@
+{if;==;{get;_{userid}_mpickcavm};;{set;_{userid}_mpickcavm;0}}
+{if;==;{get;_{userid}_mpickavm};;{set;_{userid}_mpickavm;0}}
+{if;>;{get;_mfairycount};1;{set;_mfairycount;1}}
+
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;==;{get;_{userid}_mcreg};0; You need to register first, {username} !
+
+    > Type `!mc_reg` to start!;
+
+{set;cooldown;{exec;cooldown;5 MFairy}}
+{if;==;{get;cooldown};true;
+{if;==;1;{get;_mfairycount};
+{set;_mfairycount;0}
+{set;_mfairytimercheck1;{time;X}}
+
+{timer;
+{set;_mfairycount;1}
+<:mammafairy:326115876963221515>**A random MamaFairy appeared!** 
+Type `​​​​​!mpick`​​​​​ to pick it up!
+;{randint;15;32}m}
+
+  {//;This bit is black magic, avoid at all costs
+  {set;_fairyId2;{userid}{time;X2}{randint;100000;999999}}{inject;{lb}timer{semi}{lb}if{semi}{lb}get{semi}_fairyId2{rb}{semi}=={semi}{get;_fairyId2}{semi}{lb}execcc{semi}mfairypop{rb}{semi}{rb}{semi}{lb}randint{semi}15{semi}32{rb}m{rb}}
+ Back to saftey now}
+
+{set;_mfairyrng;{randchoose;<:woodenchest:322454198279208960> Wooden Chest!{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}};<:woodenchest:322454198279208960> Wooden Chest!{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}};<:woodenchest:322454198279208960> Wooden Chest!{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}};<:silverchest:322454198157443089> Silver Chest!{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}};<:silverchest:322454198157443089> Silver Chest!{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}};<:titanchest:322454197612314626> Titan Chest!{set;_{userid}_titancount;{math;+;{get;_{userid}_titancount};1}}
+}}
+
+  {username} got a {if;==;{get;_{userid}_petcount};1;
+{if;<=;{get;_{userid}_manacount};85;{randchoose;{set;_{userid}_manaincr;{randint;3;12}}{if;==;{get;_{userid}_manaincr};0;{set;_{userid}_manaincr;6}}Small Mana Boost ! (+{get;_{userid}_manaincr} <:mana:268505067735220224>)
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_manaincr}}};{get;_mfairyrng}}
+;{get;_mfairyrng}};{get;_mfairyrng}}
+{set;_{userid}_mpickcavm;{math;+;{get;_{userid}_mpickcavm};1}}
+
+{trim;
+{if;==;{get;_{userid}_mpickavm};0;
+{if;>=;{get;_{userid}_mpickcavm};75;
+{newline}{username} just unlocked the <:mammafairy:326115876963221515>**"Mama Mia! I"** Achievement!
+
++ 5 <:titanchest:322454197612314626> Titan Chests appeared on the ground!
+{set;_throwtitan;{math;+;{get;_throwtitan};5}}
+{set;_{userid}_mpickavm;1}}}
+{if;==;{get;_{userid}_mpickavm};1;
+{if;>=;{get;_{userid}_mpickcavm};150;
+{newline}{username} just unlocked the <:mammafairy:326115876963221515>**"Mama Mia! II"** Achievement!
+
++ 15 <:titanchest:322454197612314626> Titan Chests appeared on the ground!
+{set;_throwtitan;{math;+;{get;_throwtitan};15}}
+{set;_{userid}_mpickavm;2}}}
+{if;==;{get;_{userid}_mpickavm};2;
+{if;>=;{get;_{userid}_mpickcavm};300;
+{newline}{username} just unlocked the <:mammafairy:326115876963221515>**"Mama Mia! III"** Achievement!
+
++ 30 <:titanchest:322454197612314626> Titan Chests appeared on the ground!
+{set;_throwtitan;{math;+;{get;_throwtitan};30}}
+{set;_{userid}_mpickavm;3}}}
+}
+;There's no Momma Fairy, {username} 😦
+{set;_mfairytimercheck2;{time;X}}
+{timer;
+{if;>=;{math;-;{time;X};{get;_mfairytimercheck2}};3600;
+{if;>=;{math;-;{time;X};{get;_mfairytimercheck}};3600;
+{set;_mfairycount;1}}};1h}
+};Pshshsh {username}, stop spamming Mom! 👀}
+
+
+}

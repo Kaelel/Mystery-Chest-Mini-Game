@@ -1,0 +1,64 @@
+{//;{if;{argslength};==;0;
+  {set;~page;1};
+  {set;~page;{parseint;{args}}}
+}
+{if;{get;~page};==;NaN;
+  Thats not a valid page number!;
+}
+
+{set;~users;[]}
+{set;~index;0}
+{repeat;
+  {set;~user;{get;_mcmembers;{get;~index}}}
+  {void;{push;{get;~users};{get;_{get;~user}_diamondcount}|{get;~user}}};
+  {length;{get;_mcmembers}}
+}
+{get;users}}
+
+{if;==;{get;_{userid}_diamondcount};;{set;_{userid}_diamondcount;0}}
+{if;==;{get;_{userid}_odiamondcount};;{set;_{userid}_odiamondcount;0}}
+
+{void;{if;!=;{get;_{userid}_odiamondcount};{get;_{userid}_diamondcount};{return};{exec;dldchk}}{set;_0;{regexreplace;{get;_ldboard};/(\d*#)(\d{1,18})/g;$2}}{set;mx;{length;{get;_0}}}{set;maxpg;{ceil;{math;/;{get;mx};10}}}{set;pg;
+	{if;==;0;{argslength};1;
+	{if;==;NaN;{parseint;{args;0}};1;
+	{if;>;{args;0};{get;maxpg};{get;maxpg};
+	{if;==;0;{floor;{args;0}};1;
+	{abs;{floor;{args;0}}}
+}}}}}{set;mg;{math;*;10;{math;-;{get;pg};1}}}
+{set;_1;{slice;{get;_0};{math;+;0;{get;mg}};{math;+;1;{get;mg}}}}
+{set;_2;{slice;{get;_0};{math;+;1;{get;mg}};{math;+;2;{get;mg}}}}
+{set;_3;{slice;{get;_0};{math;+;2;{get;mg}};{math;+;3;{get;mg}}}}
+{set;_4;{slice;{get;_0};{math;+;3;{get;mg}};{math;+;4;{get;mg}}}}
+{set;_5;{slice;{get;_0};{math;+;4;{get;mg}};{math;+;5;{get;mg}}}}
+{set;_6;{slice;{get;_0};{math;+;5;{get;mg}};{math;+;6;{get;mg}}}}
+{set;_7;{slice;{get;_0};{math;+;6;{get;mg}};{math;+;7;{get;mg}}}}
+{set;_8;{slice;{get;_0};{math;+;7;{get;mg}};{math;+;8;{get;mg}}}}
+{set;_9;{slice;{get;_0};{math;+;8;{get;mg}};{math;+;9;{get;mg}}}}
+{set;_10;{slice;{get;_0};{math;+;9;{get;mg}};{math;+;10;{get;mg}}}}{set;_id;{if;==;1;{get;_{userid}admin};1;0}}}💎 **| Shadow Leaderboard**
+```py
+📊 Rank | Name
+
+{trim;{if;==;1;{length;{get;_1}};{if;<=;{length;{userid;{get;_1}}};18;[{math;+;1;{get;mg}}]{space;6}> #{username;{get;_1}} {if;==;1;{get;_id};({userid;{get;_1}})}
+{space;2}Diamonds: {get;_{userid;{get;_1}}_diamondcount}}}
+{if;==;1;{length;{get;_2}};{if;<=;{length;{userid;{get;_2}}};18;[{math;+;2;{get;mg}}]{space;6}> #{username;{get;_2}} {if;==;1;{get;_id};({userid;{get;_2}})}
+{space;2}Diamonds: {get;_{userid;{get;_2}}_diamondcount}}}
+{if;==;1;{length;{get;_3}};{if;<=;{length;{userid;{get;_3}}};18;[{math;+;3;{get;mg}}]{space;6}> #{username;{get;_3}} {if;==;1;{get;_id};({userid;{get;_3}})}
+{space;2}Diamonds: {get;_{userid;{get;_3}}_diamondcount}}}                     
+{if;==;1;{length;{get;_4}};{if;<=;{length;{userid;{get;_4}}};18;[{math;+;4;{get;mg}}]{space;6}> #{username;{get;_4}} {if;==;1;{get;_id};({userid;{get;_4}})}
+{space;2}Diamonds: {get;_{userid;{get;_4}}_diamondcount}}}
+{if;==;1;{length;{get;_5}};{if;<=;{length;{userid;{get;_5}}};18;[{math;+;5;{get;mg}}]{space;6}> #{username;{get;_5}} {if;==;1;{get;_id};({userid;{get;_5}})}
+{space;2}Diamonds: {get;_{userid;{get;_5}}_diamondcount}}}
+{if;==;1;{length;{get;_6}};{if;<=;{length;{userid;{get;_6}}};18;[{math;+;6;{get;mg}}]{space;6}> #{username;{get;_6}} {if;==;1;{get;_id};({userid;{get;_6}})}
+{space;2}Diamonds: {get;_{userid;{get;_6}}_diamondcount}}}
+{if;==;1;{length;{get;_7}};{if;<=;{length;{userid;{get;_7}}};18;[{math;+;7;{get;mg}}]{space;6}> #{username;{get;_7}} {if;==;1;{get;_id};({userid;{get;_7}})}
+{space;2}Diamonds: {get;_{userid;{get;_7}}_diamondcount}}}
+{if;==;1;{length;{get;_8}};{if;<=;{length;{userid;{get;_8}}};18;[{math;+;8;{get;mg}}]{space;6}> #{username;{get;_8}} {if;==;1;{get;_id};({userid;{get;_8}})}
+{space;2}Diamonds: {get;_{userid;{get;_8}}_diamondcount}}}                      
+{if;==;1;{length;{get;_9}};{if;<=;{length;{userid;{get;_9}}};18;[{math;+;9;{get;mg}}]{space;6}> #{username;{get;_9}} {if;==;1;{get;_id};({userid;{get;_9}})}
+{space;2}Diamonds: {get;_{userid;{get;_9}}_diamondcount}}}
+{if;==;1;{length;{get;_10}};{if;<=;{length;{userid;{get;_10}}};18;[{math;+;10;{get;mg}}]{space;5}> #{username;{get;_10}} {if;==;1;{get;_id};({userid;{get;_10}})}
+{space;2}Diamonds: {get;_{userid;{get;_10}}_diamondcount}}}}
+
+-------------------------------------
+# Your Shadow Diamonds: {get;_{userid}_diamondcount}
+👻 Rank: {math;+;1;{indexof;{get;_0};{userid}}}/{get;mx}```

@@ -1,0 +1,909 @@
+{//;Temporary:}
+{if;==;{get;_mcreg};;{set;_mcreg;[]}}
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;>;{get;_{userid}_diamondcount};0;{set;_{userid}_mcreg;1}
+{if;==;-1;{indexof;{get;_mcreg};{userid}};
+{push;{get;_mcreg};{userid}}
+}}
+
+{if;==;{get;_{userid}_mcreg};0;
+You need to register first ! 
+
+    > Type `!mc_reg` to create an account!
+;
+
+{if;==;{get;_{userid}_cookierecipe};;{set;_{userid}_cookierecipe;0}}
+
+{if;>=;{get;_{userid}_pethp};{get;_{userid}_petmaxhp};{set;_{userid}_pethp;{get;_{userid}_petmaxhp}}}
+{if;<=;{get;_{userid}_pethp};0;{set;_{userid}_pethp;0}}
+
+{if;==;{get;_{userid}_maxmana};;{set;_{userid}_maxmana;100}}
+{if;>=;{get;_{userid}_questcount};100;
+{set;_{userid}_manaquest;1}
+{if;==;{get;_{userid}_manaquest};1;
+{set;_{userid}_maxmana;150}
+{if;>=;{get;_{userid}_manacount};150;{set;_{userid}_manacount;150}}
+}
+{//;
+{if;==;{get;_{userid}_manaquest};2;
+{set;_{userid}_maxmana;200}
+{if;>=;{get;_{userid}_manacount};200;{set;_{userid}_manacount;200}}
+}
+}
+;
+{if;>=;{get;_{userid}_manacount};100;{set;_{userid}_manacount;100}}
+}
+
+
+{if;>=;{get;_{userid}_manacost};10;{set;_{userid}_manacost;10}}
+{if;==;{get;_{userid}_manacostincr};{get;_{userid}_manacostincr};{set;_{userid}_manacostincr;0}}
+{if;==;{get;_{userid}_manaincr};{get;_{userid}_manaincr};{set;_{userid}_manaincr;0}}
+
+
+{if;==;{get;_{userid}_petdmg};{get;_{userid}_petdmg};{set;_{userid}_petdmg;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}}
+{if;==;{get;_{userid}_pdsteal};{get;_{userid}_pdsteal};{set;_{userid}_pdsteal;0}}
+{if;==;{get;_{userid}_petxpincr};{get;_{userid}_petxpincr};{set;_{userid}_petxpincr;0}}
+{if;==;{get;_{userid}_enemypetxp};{get;_{userid}_enemypetxp};{set;_{userid}_enemypetxp;0}}
+{//;New}
+{if;==;{get;_{userid}_exploreavm};;{set;_{userid}_explorecavm;0}{set;_{userid}_exploreavm;0}}
+
+{trim;
+{if;==;{get;_{userid}_qgate};0;
+{if;>=;{get;_{userid}_questcount};5;
+⛩ The Gates are now Unlocked, {username} !
+{set;_{userid}_qgate;1}}}}
+
+
+{//;Regen}
+{if;==;{get;_{userid}_petregen};;{set;_{userid}_petregen;0}}
+{if;==;{get;_{userid}_tregen};;{set;_{userid}_tregen;{time;X}}}
+
+{//; Old_
+{set;cooldown;{exec;cooldown;1200 rgn}}
+{if;==;{get;cooldown};true;
+{if;==;{get;_{userid}_petrgn};0;
+{if;==;{get;_{userid}_petcount};1;
+{if;<;{get;_{userid}_pethp};{get;_{userid}_petmaxhp};
+{if;<;{get;_{userid}_manacount};{get;_{userid}_maxmana};
+{set;_{userid}_petrgn;1}
+{if;==;{args;0};regen;♥ Regen Set! <:mana:268505067735220224>}
+{timer;
+{set;_{userid}_petrgn;0}
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};2}}
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};4}}
+;20m}
+}}}
+;
+{if;==;{args;0};regen;
+**+ 4 ♥ HP and 2 <:mana:268505067735220224> Mana in :** {execcc;tspan;{get;cooldown}}
+{//;Unbreak Regen}{timer;{set;_{userid}_petrgn;0};1h}
+}}
+;{if;==;{args;0};regen;
+**+ 4 ♥ HP and 2 <:mana:268505067735220224> Mana in :** {execcc;tspan;{get;cooldown}}}
+} 
+}
+
+
+{trim;
+
+{if;==;{get;_{userid}_petcount};1;
+{if;==;{get;_{userid}_petregen};0;
+{if;<;{get;_{userid}_pethp};{get;_{userid}_petmaxhp};
+{set;_{userid}_petregen;1}}
+{if;<;{get;_{userid}_manacount};{get;_{userid}_maxmana};
+{set;_{userid}_petregen;1}}
+{if;==;{args;0};regen;
+{if;<;{get;_{userid}_pethp};{get;_{userid}_petmaxhp}; ♥ Regen;Full ♥ Hp !{newline}} {if;<;{get;_{userid}_manacount};{get;_{userid}_maxmana}; Set! <:mana:268505067735220224>;
+{newline} Full <:mana:268505067735220224> Mana!}
+}
+{set;_{userid}_tregen;{time;X}}
+
+
+
+;{//;Pet Regen = 1}
+{if;>=;{math;-;{time;X};{get;_{userid}_tregen}};1800;
+{set;_{userid}_ptregen;{math;-;{time;X};{get;_{userid}_tregen}}}
+{set;_{userid}_pthregen;{round;{math;*;{math;/;{get;_{userid}_ptregen};1800};2}}}
+{set;_{userid}_ptmregen;{round;{math;*;{math;/;{get;_{userid}_ptregen};1800};1}}}
+{//; {if;==;{args;0};regen; } }
+{trim;
+**{get;_{userid}_petname}{get;_{userid}_petnick} : 
+{if;==;{get;_{userid}_pethp};{get;_{userid}_petmaxhp};;+{get;_{userid}_pthregen} ♥ HP} {if;==;{get;_{userid}_manacount};{get;_{userid}_maxmana};;+{get;_{userid}_ptmregen} <:mana:268505067735220224> Mana} !**}
+
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{get;_{userid}_pthregen}}}
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_ptmregen}}}
+
+{set;_{userid}_petregen;0}
+
+;{//;Timer not superior 20Mn}
+{if;==;{args;0};regen;
+**{if;==;{get;_{userid}_pethp};{get;_{userid}_petmaxhp};;+2 ♥ HP}  {if;==;{get;_{userid}_manacount};{get;_{userid}_maxmana};;+1 <:mana:268505067735220224> Mana} in :** {execcc;tspan;{math;-;1800;{math;-;{time;X};{get;_{userid}_tregen}}}}}
+}
+}}
+
+
+
+{//;Pet Owners}
+{if;==;{get;_petowners};;{set;_petowners;[]}}
+
+{if;==;{get;_{userid}_petcount};1;
+{if;==;-1;{indexof;{get;_{userid}_petreg};{get;_{userid}_pethp}};
+{if;>=;{indexof;{get;_petowners};{get;_{userid}_petreg}};0;
+{void;{splice;{get;_petowners};{indexof;{get;_petowners};{get;_{userid}_petreg}};1}}}
+{set;_{userid}_petreg;
+**{username} | {get;_{userid}_petname} {get;_{userid}_petnick}**
+    > {get;_{userid}_pethp} ♥ HP | Lv. {get;_{userid}_petlvl}
+}
+{push;{get;_petowners};{get;_{userid}_petreg}}
+}}
+}
+
+{switch;{args;0}
+  ;shop;
+__**<:pets:327208070843203584> | Welcome to the Pet Shop!**__
+
+ __**Pets:**__  
+          •<:Kit:327224960873660416> **Kit - 100K 💎**
+          •<:Flufflers:327224962022637588> **Fluffers - 75K 💎**
+          •<:Bubbles:327224959355322378> **Bubbles - 50K 💎**
+          •<:pets:327208070843203584> **Nova - 25K 💎**
+ __**Utils:**__
+          •:star: **Regen Star - 12K 💎**
+          •<:mana:268505067735220224> **Mana - 3.25K 💎**
+          •🏷 **Rename - 2.5k 💎**
+          •🍪 **Cookies - 220 💎**
+                > Stocks : {round;{get;_scookiecount}}
+          •🥞 **Pancakes - 45 💎**
+                > Stocks : {round;{get;_spancakecount}}
+ 
+  Type `!pet buy <name>` to buy an item!
+
+  ;buy;
+  
+  {if;==;{args;1};regen;
+    {if;>;{get;_{userid}_diamondcount};12000;
+      {username} bought **1 :star: Regen Star !**
+      {set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};1}}
+      {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};12000}}
+      ;You don't have enough 💎 Diamonds!}}
+  
+  {if;==;{args;1};rename;
+    {if;>;{get;_{userid}_diamondcount};2500;
+      {username} bought **1 🏷 Pet Tag !**
+      {set;_{userid}_petrename;1}
+      {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};2500}}
+      ;You don't have enough 💎 Diamonds!}}
+  
+
+{if;==;{args;1};pancakes;
+{if;>;{args;2};0;
+{if;>=;{get;_spancakecount};{args;2};
+{set;_{userid}_diamondincr;1}
+{set;_{userid}_diamondincr;{math;*;45;{args;2}}}
+{if;>;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr};
+{username} bought **{round;{args;2}}** 🥞 Pancakes for **{ceil;{get;_{userid}_diamondincr}} :gem: Diamonds !**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+{set;_spancakecount;{math;-;{get;_spancakecount};{args;2}}}
+{set;_{userid}_pancakescount;{math;+;{get;_{userid}_pancakescount};{args;2}}}
+;You don't have enough 💎 Diamonds!};There's not enough 🥞 Pancakes in stock!};Please, enter the Number of items that you want to buy.}}
+
+
+
+
+{if;==;{args;1};cookies;
+{if;>;{args;2};0;
+{if;>=;{get;_scookiecount};{args;2};
+{set;_{userid}_diamondincr;1}
+{set;_{userid}_diamondincr;{math;*;220;{args;2}}}
+{if;>;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr};
+You've bought **{round;{args;2}} 🍪 Cookies for {ceil;{math;*;220;{args;2}}} 💎 Diamonds!**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+{set;_{userid}_cookiecount;{math;+;{get;_{userid}_cookiecount};{args;2}}}
+{set;_scookiecount;{math;-;{get;_scookiecount};{args;2}}}
+;You don't have enough 💎  Diamonds!};There's not enough 🍪 Cookies in stock!};Please, enter the Number of items that you want to buy.}}
+
+
+
+{if;==;{args;1};mana;
+{if;>;{args;2};0;
+{if;<=;{math;*;3250;{args;2}};{get;_{userid}_diamondcount};
+{username} bought **{round;{args;2}} <:mana:268505067735220224> Mana Potion!**
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};{math;*;3250;{args;2}}}}
+{set;_{userid}_manapotion;{math;+;{get;_{userid}_manapotion};{args;2}}}
+;You don't have enough 💎 Diamonds!}}}
+
+  {if;==;0;{get;_{userid}_petcount};
+    {if;==;{args;1};nova;
+      {if;==;0;{get;_{userid}_petcount};
+        {if;<=;25000;{get;_{userid}_diamondcount};
+          {username} just acquiered  <:pets:327208070843203584> **Nova 😊!!!**
+          {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};25000}}
+          {set;_{userid}_petcount;1}
+          {set;_{userid}_petlvl;1}
+          {set;_{userid}_petname;<:pets:327208070843203584>}
+          {set;_{userid}_pethp;100}
+          {set;_{userid}_petmaxhp;100}
+          {set;_{userid}_petmindmg;2}
+          {set;_{userid}_petmaxdmg;7}
+          {set;_{userid}_petxp;0}
+          {set;_{userid}_petmaxxp;50}
+          {set;_{userid}_fpetminxp;1}
+          {set;_{userid}_fpetmaxxp;3}
+          {set;_{userid}_manacost;6}
+          {set;_{userid}_manacount;100}
+          {set;_{userid}_minpdsteal;50}
+          {set;_{userid}_maxpdsteal;150}
+
+;You don't have enough 💎 Diamonds!};You already have a pet!}}
+    {if;==;{args;1};bubbles;
+      {if;==;0;{get;_{userid}_petcount};
+        {if;<=;50000;{get;_{userid}_diamondcount};
+          {username} just acquiered <:Bubbles:327224959355322378> **Bubbles 😊!!!**
+          {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};50000}}
+          {set;_{userid}_petcount;1}
+          {set;_{userid}_petlvl;1}
+          {set;_{userid}_petname;<:Bubbles:327224959355322378>}
+          {set;_{userid}_pethp;100}
+          {set;_{userid}_petmaxhp;100}
+          {set;_{userid}_petmindmg;2}
+          {set;_{userid}_petmaxdmg;7}
+          {set;_{userid}_petxp;0}
+          {set;_{userid}_petmaxxp;50}
+          {set;_{userid}_fpetminxp;1}
+          {set;_{userid}_fpetmaxxp;3}
+          {set;_{userid}_manacost;6}
+          {set;_{userid}_manacount;100}
+          {set;_{userid}_minpdsteal;100}
+          {set;_{userid}_maxpdsteal;200}
+;You don't have enough 💎 Diamonds!};You already have a pet!}}
+    {if;==;{args;1};fluffers;
+      {if;==;0;{get;_{userid}_petcount};
+        {if;<=;75000;{get;_{userid}_diamondcount};
+          {username} just acquiered <:Flufflers:327224962022637588> **Fluffers 😊!!!**
+          {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};75000}}
+          {set;_{userid}_petcount;1}
+          {set;_{userid}_petlvl;1}
+          {set;_{userid}_petname; <:Flufflers:327224962022637588>}
+          {set;_{userid}_pethp;125}
+          {set;_{userid}_petmaxhp;125}
+          {set;_{userid}_petmindmg;2}
+          {set;_{userid}_petmaxdmg;7}
+          {set;_{userid}_petxp;0}
+          {set;_{userid}_petmaxxp;50}
+          {set;_{userid}_fpetminxp;1}
+          {set;_{userid}_fpetmaxxp;3}
+          {set;_{userid}_manacost;6}
+          {set;_{userid}_manacount;100}
+          {set;_{userid}_minpdsteal;50}
+          {set;_{userid}_maxpdsteal;150}
+;You don't have enough 💎 Diamonds!};You already have a pet!}}
+    {if;==;{args;1};kit;
+      {if;==;0;{get;_{userid}_petcount};
+        {if;<=;100000;{get;_{userid}_diamondcount};
+          {username} just acquiered <:Kit:327224960873660416> **Kit 😊!!!**
+          {set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};100000}}
+          {set;_{userid}_petcount;1}
+          {set;_{userid}_petlvl;1}
+          {set;_{userid}_petname;<:Kit:327224960873660416>}
+          {set;_{userid}_pethp;100}
+          {set;_{userid}_petmaxhp;100}
+          {set;_{userid}_petmindmg;4}
+          {set;_{userid}_petmaxdmg;9}
+          {set;_{userid}_petxp;0}
+          {set;_{userid}_petmaxxp;50}
+          {set;_{userid}_fpetminxp;1}
+          {set;_{userid}_fpetmaxxp;3}
+          {set;_{userid}_manacost;6}
+          {set;_{userid}_manacount;100}
+          {set;_{userid}_minpdsteal;50}
+          {set;_{userid}_maxpdsteal;150}
+;You don't have enough 💎 Diamonds!};You already have a pet!}}
+    }
+
+;stats;
+{if;==;0;{get;_{userid}_petcount};You have no pet 😞;
+__**{get;_{userid}_petname}| {get;_{userid}_petnick} Stats :**__
+      ⚔ **{get;_{userid}_petmindmg}-{get;_{userid}_petmaxdmg} Damage**
+      ♥ **{round;{get;_{userid}_pethp}}/{get;_{userid}_petmaxhp} HP** {if;==;{get;_{userid}_pethp};0;<:rip:269246519381590026>}{if;==;{get;_{userid}_invincibility};1;🌟}
+      🔱 **Lvl. {get;_{userid}_petlvl}**
+      🥚 **{ceil;{get;_{userid}_petxp}}/{ceil;{get;_{userid}_petmaxxp}} XP**
+      <:mana:268505067735220224> **{round;{get;_{userid}_manacount}}/{get;_{userid}_maxmana} Mana** 
+      :gem: **+ {get;_{userid}_minpdsteal}-{get;_{userid}_maxpdsteal} Diamonds**
+}
+
+You have : **{round;{get;_{userid}_manapotion}}**<:mana:268505067735220224> Mana Potion(s), **{round;{get;_{userid}_pancakescount}}** 🥞 Pancakes & **{round;{get;_{userid}_cookiecount}}** 🍪 Cookie(s).
+
++**{round;{get;_{userid}_invincstar}}** :star2: Invb. Star(s) & **{round;{get;_{userid}_regenstar}}** :star: Regen Star(s).
+
+{trim;
+{if;==;{get;_{userid}_waterorb};;{set;_{userid}_waterorb;0}}
+{if;==;{get;_{userid}_earthorb};;{set;_{userid}_earthorb;0}}
+{if;==;{get;_{userid}_fireorb};;{set;_{userid}_fireorb;0}}
+{if;>=;{get;_{userid}_waterorb};1;{get;_{userid}_waterorb}🔮}{if;>=;{get;_{userid}_earthorb};1;**|**{get;_{userid}_earthorb}🌏}{if;>=;{get;_{userid}_fireorb};1;**|**{get;_{userid}_fireorb}🔥}
+}
+  
+{//;
+;reset;You've lost your pet! 😞{set;_{userid}_petcount;0}{set;_{userid}_petname;}
+}
+;info;__**<:pets:327208070843203584> | Pet Infos :**__
+
+Here are the different informations about pets :
+
+  __**Pets:**__ 
+          •<:Cerberus:348247151790391308> **Cerberus** - All Bonuses! 
+          •<:Kit:327224960873660416> **Kit** - Damage Bonus.
+          •<:Flufflers:327224962022637588> **Fluffers** - Health Bonus.
+          •<:Bubbles:327224959355322378> **Bubbles** - Diamonds Bonus.
+          •<:pets:327208070843203584> **Nova** - No Bonuses.
+ __**Utils:**__
+          •:star2: **Invincibility** - Can't be attacked or lose HP for 12H ! *(Hunt,Fight,Wb...)*
+          •:star: **Regen** - Regain all of your Pet's HP & Mana !
+          •<:mana:268505067735220224> **Mana** - Regenerate +50 Mana!
+          •🏷 **Rename** - Rename your pet!
+          •🍪 **Cookies** - Heal your pet for 5HP.
+          •🥞 **Pancakes** - Heal your pet for 1HP.
+
+;use;
+{set;cooldown;{exec;cooldown;5 use}}
+{if;==;{get;cooldown};true;
+
+{if;==;{args;1};water_orb;
+{set;cooldown;{exec;cooldown;86400 orb}}
+{if;==;{get;cooldown};true;
+{if;==;{get;_{userid}_waterorb};0;
+You don't have any 🔮 Orb to use !;
+{if;==;{get;_wbhp};0;
+The World Boss is :skull: dead !;
+{username} used a **🔮 Water Orb** and dealt **25 ✨** Magical Damages to **{get;_wb}** !
+{set;_wbhp;{math;-;{get;_wbhp};25}}
+{set;_{userid}_waterorb;{math;-;{get;_{userid}_waterorb};1}}
+{set;_{userid}_wbcount;{math;+;{get;_{userid}_wbcount};2}}
+
+{execcc;wb_kill}
+
+}};Please wait {execcc;tspan;{get;cooldown}} before using another orb {username} !  }}
+
+{if;==;{args;1};invincibility;
+{if;>;{get;_{userid}_invincstar};0;
+{username} used an 🌟 **Invincibility Star** on {get;_{userid}_petnick} ! 
+
+    > Your Pet is now invincible for 12H !
+{set;_{userid}_invincstar;{math;-;{get;_{userid}_invincstar};1}}
+{set;_{userid}_invincibility;1}
+{timer;{set;_{userid}_invincibility;0};12h}
+;You don't have any 🌟 Invincibility Stars !}} 
+
+{if;==;{args;1};regen;
+{if;>;{get;_{userid}_regenstar};0;
+{get;_{userid}_petnick} regained **{math;-;{get;_{userid}_petmaxhp};{get;_{userid}_pethp}} ♥ HP & {math;-;{get;_{userid}_maxmana};{get;_{userid}_manacount}} <:mana:268505067735220224> Mana !** 
+{set;_{userid}_pethp;{get;_{userid}_petmaxhp}}
+{set;_{userid}_manacount;{get;_{userid}_maxmana}}
+{set;_{userid}_regenstar;{math;-;{get;_{userid}_regenstar};1}}
+;You don't have any :star: Regen Star :weary:!}}
+
+{if;==;{args;1};rename;
+{if;==;{get;_{userid}_petrename};1;
+{if;>;{argslength};2;
+{username} renamed his pet as : **{args;2;n} !**
+{set;_{userid}_petnick;{args;2;n}}
+{set;_{userid}_petrename;0}
+;Please enter a valid name!};You don't have any 🏷 Pet Tag!}}
+
+{if;==;{args;1};pancakes;
+{if;>;{args;2};0;
+{if;>=;{get;_{userid}_pancakescount};{args;2};
+{if;>;{get;_{userid}_petmaxhp};{get;_{userid}_pethp};
+You Healed your Pet for **+{round;{args;2}} ♥ HP!**
+{set;_{userid}_pancakescount;{math;-;{get;_{userid}_pancakescount};{args;2}}}
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{args;2}}}
+;Your pet is already ♥ Full Health!}
+;You don't have enough 🥞 Pancakes!};Please, specify the amount you want to use!}}
+
+{if;==;{args;1};cookies;
+{if;>;{args;2};0;
+{if;>=;{get;_{userid}_cookiecount};{args;2};
+{if;>;{get;_{userid}_petmaxhp};{get;_{userid}_pethp};
+{if;>;{math;*;5;{args;2}};{math;-;{get;_{userid}_petmaxhp};{get;_{userid}_pethp}};
+ That's too much 🍪 cookies for your pet to eat !;
+You Healed your Pet for **+{round;{math;*;5;{args;2}}} ♥ HP!**
+{set;_{userid}_cookiecount;{math;-;{get;_{userid}_cookiecount};{args;2}}}
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{math;*;5;{args;2}}}}
+};Your pet is already ♥ Full Health!}
+;You don't have enough 🍪 Cookies!};Please, specify the amount you want to use!}}
+
+{if;==;{args;1};mana;
+{if;>;{get;_{userid}_manapotion};0;
+{if;>;{get;_{userid}_maxmana};{get;_{userid}_manacount};
+Your pet regained **50 <:mana:268505067735220224> Mana!**
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};50}}
+{set;_{userid}_manapotion;{math;-;{get;_{userid}_manapotion};1}}
+;Your pet is already <:mana:268505067735220224> Full Mana !}
+;You don't have enough <:mana:268505067735220224> Mana Potions!}}
+
+;You need to wait {get;cooldown} seconds !}
+
+;fight;
+{if;==;{indexof;{get;_mcreg};{userid;{lower;{args;1}}}};-1;
+Please, select a valid user!;
+{if;==;0;{get;_{userid}_petcount};You don't have any Pet to fight with! 😞;
+{if;==;{get;_{userid;{lower;{args;1}}}_invincibility};1; {get;_{userid;{lower;{args;1}}}_petnick} is currently :star2: Invincible!;
+{if;==;0;{get;_{userid;{lower;{args;1}}}_petcount};This user doesn't have any Pet! 😞;
+{if;<;{get;_{userid}_diamondcount};2500;You need at least 2500 💎 Diamonds to start a Fight!;
+{if;<;{get;_{userid;{lower;{args;1}}}_diamondcount};2500;This user doesn't have enough 💎 Diamonds!;
+{if;<;{get;_{userid}_pethp};10;You need at least 10 💔 HP to Fight!;
+{if;<;{get;_{userid;{lower;{args;1}}}_pethp};10;This User is 💔 Low Health!;
+{if;<=;{get;_{userid;{lower;{args;1}}}_pethp};0;This User's Pet is dead ! <:rip:269246519381590026>;
+{if;>;{get;_{userid}_petlvl};{math;+;3;{get;_{userid;{lower;{args;1}}}_petlvl}}; This User's Pet is too <:downvote:324977066820894721> Low Level!;
+{if;>;{get;_{userid;{lower;{args;1}}}_petlvl};{math;+;3;{get;_{userid}_petlvl}};This User's Pet is too <:upvote:324977066975952896> High Level!;
+{if;<;{get;_{userid}_manacount};{get;_{userid}_manacost};You need at least {get;_{userid}_manacost} <:mana:268505067735220224> Mana to Fight!;
+{set;p1;{get;_{userid}_petnick}}
+{set;p2;{get;_{userid;{lower;{args;1}}}_petnick}}
+{if;{get;p1};==;{get;p2};
+   🚫 __You can't fight yourself!__ 🚫;
+{set;cooldown;{exec;cooldown;300 fight}}
+{if;==;{get;cooldown};true;
+{set;_{userid;{lower;{args;1}}}_petdmg;{randint;{get;_{userid;{lower;{args;1}}}_petmindmg};{get;_{userid;{lower;{args;1}}}_petmaxdmg}}}
+{set;_{userid}_petdmg;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}
+__**<:pets:327208070843203584> Pet fight ! ⚔**__
+🗡 {get;p1} attacked {get;p2} for :
+💥 **{get;_{userid}_petdmg}** Damage and took **{get;_{userid;{lower;{args;1}}}_petdmg}** Damage ! 💔
+{set;_{userid;{lower;{args;1}}}_pethp;{math;-;{get;_{userid;{lower;{args;1}}}_pethp};{get;_{userid}_petdmg}}}
+{if;==;{get;_{userid}_invincibility};0;
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_{userid;{lower;{args;1}}}_petdmg}}}}
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacost}}}
+
+    > You stole :
+{set;_{userid}_pdsteal;{randint;{get;_{userid}_minpdsteal};{get;_{userid}_maxpdsteal}}}
+**{get;_{userid}_pdsteal} :gem: Diamonds** from {get;p2} !
+{set;_{userid;{lower;{args;1}}}_diamondcount;{math;-;{get;_{userid;{lower;{args;1}}}_diamondcount};{get;_{userid}_pdsteal}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_pdsteal}}}
+
+{get;_{userid}_petnick} now has **{get;_{userid}_pethp} / {get;_{userid}_petmaxhp} ♥ HP!** 
+{get;_{userid;{lower;{args;1}}}_petnick} now has **{get;_{userid;{lower;{args;1}}}_pethp} / {get;_{userid;{lower;{args;1}}}_petmaxhp} ♥ HP!**
+
+{if;>=;0;{get;_{userid;{lower;{args;1}}}_pethp}; **{username}** has slained **{get;p2}** <:rip:269246519381590026> !
+{get;_{userid}_petname} | {get;_{userid}_petnick} won : {set;_{userid}_petxpincr;{math;*;3;{randint;{get;_{userid}_fpetminxp};{get;_{userid}_fpetmaxxp}}}}**{get;_{userid}_petxpincr} XP !**
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_petxpincr}}}
+{set;_{userid}_petkcavm;{math;+;{get;_{userid}_petkcavm};1}}
+
+{trim;
+{if;==;{get;_{userid}_petkavm};0;
+{if;>=;{get;_{userid}_petkcavm};12;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 1 🌟 Invincibility Star & 2 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};1}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};2}}
+{set;_{userid}_petkavm;1}}}
+
+{if;==;{get;_{userid}_petkavm};1;
+{if;>=;{get;_{userid}_petkcavm};25;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 3 🌟 Invincibility Star & 5 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};3}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};5}}
+{set;_{userid}_petkavm;2}}}
+
+{if;==;{get;_{userid}_petkavm};2;
+{if;>=;{get;_{userid}_petkcavm};50;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 6 🌟 Invincibility Star & 10 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};6}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};10}}
+{set;_{userid}_petkavm;3}}}
+};
+{get;_{userid}_petname} | {get;p1} won : {set;_{userid}_petxpincr;{randint;{get;_{userid}_fpetminxp};{get;_{userid}_fpetmaxxp}}}**{get;_{userid}_petxpincr} XP for attacking!**
+{set;_{userid}_enemypetxp;{math;*;2;{get;_{userid;{lower;{args;1}}}_petlvl}}}
+{get;_{userid;{lower;{args;1}}}_petname} | {get;p2} received **{get;_{userid}_enemypetxp} XP.**
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_petxpincr}}}
+{set;_{userid;{lower;{args;1}}}_petxp;{math;+;{get;_{userid;{lower;{args;1}}}_petxp};{get;_{userid}_enemypetxp}}}
+}
+{set;_{userid}_petfcavm;{math;+;{get;_{userid}_petfcavm};1}}
+
+{trim;
+{if;==;{get;_{userid}_petfavm};0;
+{if;>=;{get;_{userid}_petfcavm};125;{username} just unlocked the ⚔**"Pet Warlord I"** Achievement!
+
++ 5 <:mana:268505067735220224> Mana Potions !
+{set;_{userid}_manapotion;{math;+;{get;_{userid}_manapotion};5}}
+{set;_{userid}_petfavm;1}}}
+
+{if;==;{get;_{userid}_petfavm};1;
+{if;>=;{get;_{userid}_petfcavm};250;{username} just unlocked the ⚔**"Pet Warlord II"** Achievement!
+
++ 10 <:mana:268505067735220224> Mana Potions !
+{set;_{userid}_manapotion;{math;+;{get;_{userid}_manapotion};10}}
+{set;_{userid}_petfavm;2}}}
+
+{if;==;{get;_{userid}_petfavm};2;
+{if;>=;{get;_{userid}_petfcavm};500;{username} just unlocked the ⚔**"Pet Warlord III"** Achievement!
+
++ 15 <:mana:268505067735220224> Mana Potions !
+{set;_{userid}_manapotion;{math;+;{get;_{userid}_manapotion};15}}
+{set;_{userid}_petfavm;3}}}
+}
+{execcc;level_up}
+;You need to wait : {execcc;tspan;{get;cooldown}} to Fight again ⚔ !}
+}}}}}}}}}}}}}
+
+;explore;
+
+{execcc;pet_explore}
+
+;map; 
+
+{if;==;{args;1};open;
+{if;==;{get;_{userid}_petmap};1;
+{dm;{userid};http://i.imgur.com/VrCZQhC.png}}
+{if;==;{get;_{userid}_petmap};2;
+{dm;{userid};http://i.imgur.com/9AO3lYt.png}};
+__**🗺| World Map :**__ 
+
+    > You are at (x,{get;_{userid}_xpos}/y,{get;_{userid}_ypos}) : **{get;_{userid}_pos}**
+
+{if;==;{get;_{userid}_petmap};;{set;_{userid}_petmap;0}}
+{if;>=;{get;_{userid}_petmap};1;
+Type `!pet map open` to view the Full Map!
+;Type `!pet move <direction>` to move around the world!}}
+;move;
+
+{if;==;{get;_{userid}_petcount};0;
+You need a <:pets:327208070843203584> Pet to Explore the World, {username} !;
+{if;<;{get;_{userid}_manacount};5;
+{get;_{userid}_petnick} needs at least 5 <:mana:268505067735220224> Mana to move!;
+{set;_{userid}_manacostincr;{randint;1;3}}
+
+{set;cooldown;{exec;cooldown;15 move}}
+{if;==;{get;cooldown};true;
+
+{if;==;{args;1};east;
+{if;==;{get;_{userid}_qgate};0;
+{if;<;{get;_{userid}_xpos};2;
+{set;_{userid}_xpos;{math;+;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved East.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to Open the ⛩ Gates first!}
+;
+{if;<;{get;_{userid}_petlvl};5;
+{if;<;{get;_{userid}_xpos};5;
+{set;_{userid}_xpos;{math;+;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved East.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to be **🔱 Lv.5** at least to move further!}
+;
+{if;<;{get;_{userid}_xpos};10;
+{set;_{userid}_xpos;{math;+;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved East.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} has reached the border!}
+}{//;petlvl}
+}{//;qgate}
+}{//;east}
+
+{if;==;{args;1};west;
+{if;==;{get;_{userid}_qgate};0;
+{if;>;{get;_{userid}_xpos};-2;
+{set;_{userid}_xpos;{math;-;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved West.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to Open the ⛩ Gates first!}
+;
+{if;<;{get;_{userid}_petlvl};5;
+{if;>;{get;_{userid}_xpos};-5;
+{set;_{userid}_xpos;{math;-;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved West.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to be **🔱 Lv.5** at least to move further!}
+;
+{if;>;{get;_{userid}_xpos};-10;
+{set;_{userid}_xpos;{math;-;{get;_{userid}_xpos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved West.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} has reached the border!}
+}
+}
+}
+
+{if;==;{args;1};north;
+{if;==;{get;_{userid}_qgate};0;
+{if;<;{get;_{userid}_ypos};2;
+{set;_{userid}_ypos;{math;+;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved North.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to Open the ⛩ Gates first!}
+;
+{if;<;{get;_{userid}_petlvl};5;
+{if;<;{get;_{userid}_ypos};5;
+{set;_{userid}_ypos;{math;+;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved North.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to be 🔱 **Lv.5** at least to move further!}
+;
+{if;<;{get;_{userid}_ypos};10;
+{set;_{userid}_ypos;{math;+;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved North.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} has reached the border!}
+}
+}
+}
+
+{if;==;{args;1};south;
+{if;==;{get;_{userid}_qgate};0;
+{if;>;{get;_{userid}_ypos};-2;
+{set;_{userid}_ypos;{math;-;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved South.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to Open the ⛩ Gates first!}
+;
+{if;<;{get;_{userid}_petlvl};5;
+{if;>;{get;_{userid}_ypos};-5;
+{set;_{userid}_ypos;{math;-;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved South.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} needs to be **🔱 Lv.5** at least to move further!}
+;
+{if;>;{get;_{userid}_ypos};-10;
+{set;_{userid}_ypos;{math;-;{get;_{userid}_ypos};1}}
+{get;_{userid}_petname} {get;_{userid}_petnick} moved South.
+(-**{get;_{userid}_manacostincr}** <:mana:268505067735220224> Mana)
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacostincr}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} has reached the border!}
+}
+}
+}
+
+;Please, wait {execcc;tspan;{get;cooldown}} to move again, {username}!}
+}
+}
+{execcc;pet_pos}
+
+;quest;
+
+{if;==;{args;1};recipe;
+{if;==;{get;_{userid}_cookierecipe};0;
+{if;==;{get;_{userid}_pos};🍭 Candy House;
+{if;<;{get;_{userid}_pancakescount};500;
+You don't have enough 🥞 Pancakes !;
+👵 - Woah, you really did it! 
+That's a *Lot* of 🥞 Pancakes, Thank You!
+
+> Here is the **📄 Cookie Recipe**, as promised!
+{set;_{userid}_cookierecipe;1}
+{set;_{userid}_pancakescount;{math;-;{get;_{userid}_pancakescount};500}}
+}};You can't do that here, {username} ! :eyes:};
+
+{if;==;{args;1};shoot;
+{if;==;{get;_{userid}_petcount};0;You need a <:pets:327208070843203584> Pet to complete a Quest!;
+{if;<;{get;_{userid}_pethp};25;Require 25 ♥ HP min.;
+{if;<;{get;_{userid}_manacount};12;You need at least 12 <:mana:268505067735220224> Mana to start a ShootQuest!;
+{set;cooldown;{exec;cooldown;600 quest}}
+{if;==;{get;cooldown};true;
+
+<:finnking:312677133677887488>**| Train your accuracy with Finn!**
+    > `!shoot` the Titans that appears! (15s)
+
+    > Are you ready?... 
+
+{timer;
+🏁 **-Start Shooting Now !!!-**
+{set;_{userid}_shootquest;1}
+{set;_{userid}_qtimerlock;0}
+
+**A Titan appeared in the sky ! <:marzx13:272373282349514752>** 
+{set;_{userid}_shoottrue;1}
+;5s}
+{set;_{userid}_questcount;{math;+;{get;_{userid}_questcount};1}}
+;You need to wait : {execcc;tspan;{get;cooldown}} before completing another Quest!}
+}}};
+
+{if;==;{args;1};tap;
+{if;==;{get;_{userid}_petcount};0;You need a <:pets:327208070843203584> Pet to complete a Quest!;
+{if;<;{get;_{userid}_pethp};15;Require 15 ♥ HP min.;
+{if;<;{get;_{userid}_manacount};8;You need at least 8 <:mana:268505067735220224> Mana to start a Tap Quest!;
+{set;cooldown;{exec;cooldown;600 quest}}
+{if;==;{get;cooldown};true;
+
+<:omg:269247000631967744>**| The BearKeeper will train your Maximum Tap speed!**
+    > Type `!tap` a maximum amount of times for **3** seconds!
+
+    > Are you ready?... 
+
+Today you will Tap on.. {randchoose;a 🌲 Tree!;a 🐐 Goat!;a 🍖 Piece of Meat!;the 💨 Air!;<:omg:269247000631967744> ME !!!}
+{timer;
+🏁 **-Start Tapping Now !!!-**
+{set;_{userid}_tapquest;1}
+{set;_{userid}_qtimerlock;0}
+;3s}
+{set;_{userid}_questcount;{math;+;{get;_{userid}_questcount};1}}
+
+;You need to wait : {execcc;tspan;{get;cooldown}} before completing another 📜 Quest, {username}!}
+}}};
+
+__**📜| Welcome to the Quest panel !**__
+
+    • **<:omg:269247000631967744> Train your Max Tap speed with the BearKeeper!**
+    ***Difficulty Level : 1 - 8 <:mana:268505067735220224> Mana.***
+        > Type `!pet quest tap` to start a TapQuest!
+        > The BearKeeper will tell you when the quest starts, so look closely to the chat!
+        > Type `!tap` a maximum amount of times! (~3s)
+            > ProTips : Discord will block some of your messages if you Tap too fast, you need to find the right pace, Good Luck!
+
+    • **<:finnking:312677133677887488> Train your Accuracy with Finn!**
+    ***Difficulty Level : 5 - 12 <:mana:268505067735220224> Mana.***
+        > Type `!pet quest shoot` to start a ShootQuest!
+        > Finn will tell you when to start Shooting!
+        > Type `!shoot` when a Titan appears in the chat to boost your Score! (~15s)
+
+    • <:TimerOh:334815692249497600> *** World Boss Fight *** :eyes:
+    ***Difficulty Level : 10 :warning: - 25 <:mana:268505067735220224> Mana.***
+        > Type `!wb` to see the Boss Health and the current amount of attackers !
+        > Type `!wb fight` to hit the WorldBoss!
+        > Once the WB is dead, type `!wb reward` to claim your rewards !
+
+}
+}
+}
+  
+;hunt;
+{if;==;{get;_{userid}_hunt};;{set;_{userid}_hunt;0}}
+
+ __**🏹 The Hunt**__ {if;==;{get;_{userid}_hunt};1;({get;_{userid}_huntcount} Left)}
+
+{if;==;{get;_{userid}_hunt};0;
+{trim;
+{if;==;{get;_{userid}_pos};🏜 Tribe Outpost;
+{if;<;{get_{userid}_petlvl};7;
+You need to be at least :trident: Lv.7 to start a Hunt!;
+{if;<;{get;_{userid}_pethp};25;
+You need at least 25 :hearts: HP to start a Hunt!;
+{if;<;{get;_{userid}_manacount};{get;_{userid}_manacost};
+You need at least {get;_{userid}_manacost} <:mana:268505067735220224> Mana to start a Hunt!;
+{set;_{userid}_hunt;1}
+{set;_{userid}_huntcount;5}
+{set;_{userid}_target;{randchoose;{get;_petowners}}}
+{if;>=;{indexof;{get;_{userid}_target};{username}};0;
+
+<:error:324977067265490954> Error, try again!
+{set;_{userid}_hunt;0};
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};{get;_{userid}_manacost}}}
+
+Welcome to the Hunt, {username} ! 
+
+> Setting your Target ...
+
+{get;_{userid}_target} is your Target! Hunt him down! 🎯
+}}}}
+;You need to be in the Tribe OutPost zone to start a Hunt!}
+}
+;
+{if;==;{argslength};1;
+> Your Target is : {get;_{userid}_target}, Hunt him down! 🎯
+
+    > Type `!pet hunt username`
+       ( Don't use mentions ! )
+
+`!pet lock username` - 10K :gem: Diamonds to get your Target's location!;
+{trim;
+{if;>=;{indexof;{get;_{userid}_target};{username;{args;1}}};0;
+{if;==;{get;_{userid}_xpos};{get;_{userid;{args;1}}_xpos};
+{if;==;{get;_{userid}_ypos};{get;_{userid;{args;1}}_ypos};
+{if;<=;{get;_{userid;{args;1}}_pethp};0;
+This User's Pet is Dead! <:rip:269246519381590026>
+You need to wait for him to regen to finish your Hunt!;
+
+{set;cooldown;{exec;cooldown;300 fight}}
+{if;==;{get;cooldown};true;
+
+{set;_{userid}_petdmg;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}
+{set;_{userid}_petdmg;{math;+;{get;_{userid}_petdmg};2}}
+
+🎯 {get;_{userid}_petnick} Hunted down {get;_{userid;{args;1}}_petnick},
+And dealt 💥 **{get;_{userid}_petdmg}** Stealth Damage ! 💔
+{set;_{userid;{args;1}}_pethp;{math;-;{get;_{userid;{args;1}}_pethp};{get;_{userid}_petdmg}}}
+
+    > You stole :
+{set;_{userid}_pdsteal;{randint;{get;_{userid}_minpdsteal};{get;_{userid}_maxpdsteal}}}
+**{get;_{userid}_pdsteal} :gem: Diamonds** from {get;_{userid;{args;1}}_petnick} !
+{set;_{userid;{args;1}}_diamondcount;{math;-;{get;_{userid;{args;1}}_diamondcount};{get;_{userid}_pdsteal}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_pdsteal}}}
+{get;_{userid;{args;1}}_petnick} now has **{get;_{userid;{args;1}}_pethp} / {get;_{userid;{args;1}}_petmaxhp} ♥ HP!**
+
+{if;>=;0;{get;_{userid;{args;1}}_pethp}; **{username}** has slained **{get;_{userid;{args;1}}_petnick}** <:rip:269246519381590026> !
+{get;_{userid}_petname} | {get;_{userid}_petnick} won : {set;_{userid}_petxpincr;{math;*;3;{randint;{get;_{userid}_fpetminxp};{get;_{userid}_fpetmaxxp}}}}**{get;_{userid}_petxpincr} XP !**
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_petxpincr}}}
+{set;_{userid}_petkcavm;{math;+;{get;_{userid}_petkcavm};1}}
+
+{if;==;{get;_{userid}_petkavm};0;
+{if;>=;{get;_{userid}_petkcavm};12;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 1 🌟 Invincibility Star & 2 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};1}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};2}}
+{set;_{userid}_petkavm;1}}}
+
+{if;==;{get;_{userid}_petkavm};1;
+{if;>=;{get;_{userid}_petkcavm};25;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 3 🌟 Invincibility Star & 5 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};3}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};5}}
+{set;_{userid}_petkavm;2}}}
+
+{if;==;{get;_{userid}_petkavm};2;
+{if;>=;{get;_{userid}_petkcavm};50;{username} has just unlocked the ☠**"Monst3r K!ll !"** Achievement!
+
++ 6 🌟 Invincibility Star & 10 ⭐ Regen Stars ! 
+{set;_{userid}_invincstar;{math;+;{get;_{userid}_invincstar};6}}
+{set;_{userid}_regenstar;{math;+;{get;_{userid}_regenstar};10}}
+{set;_{userid}_petkavm;3}}}
+
+;
+{get;_{userid}_petname} | {get;_{userid}_petnick} won : {set;_{userid}_petxpincr;{randint;{get;_{userid}_fpetminxp};{get;_{userid}_fpetmaxxp}}}**{get;_{userid}_petxpincr} XP for attacking!**
+{set;_{userid}_enemypetxp;{math;*;2;{get;_{userid;{args;1}}_petlvl}}}
+{get;_{userid;{args;1}}_petname} | {get;_{userid;{args;1}}_petnick} received **{get;_{userid}_enemypetxp} XP.**
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_petxpincr}}}
+{set;_{userid;{args;1}}_petxp;{math;+;{get;_{userid;{args;1}}_petxp};{get;_{userid}_enemypetxp}}}
+}
+
+{set;_{userid}_petdmg;{math;-;{get;_{userid}_petdmg};2}}
+{set;_{userid}_huntcount;{math;-;{get;_{userid}_huntcount};1}}
+
+{if;==;{get;_{userid}_huntcount};0;
+{set;_{userid}_hunt;0}}
+
+;You need to wait : {execcc;tspan;{get;cooldown}} to Fight again ⚔ !}}
+;Your Target is not here! :weary:};Your Target is not here! :weary:};<:error:324977067265490954> User not valid!}
+}
+}
+}
+
+;lock;
+
+{if;>=;{indexof;{get;_{userid}_target};{username;{args;1}}};0; {//;Username????}
+-10K :gem:
+
+{get;_{userid;{args;1}}_petname}{get;_{userid;{args;1}}_petnick} is located at : (x,{get;_{userid;{args;1}}_xpos}/y,{get;_{userid;{args;1}}_ypos})
+{set;_{userid}_diamondcount;{math;-;{get;_{userid}_diamondcount};10000}}
+;<:error:324977067265490954> User not valid!}
+
+;achi;
+
+{if;==;{args;1};list;
+__**<:pets:327208070843203584> {username}'s Pets Achievements :**__
+{if;==;1;{get;_{userid}_petlvlavm};🥚__**`[-I wanna be the very best! I]`**__;;}{if;==;2;{get;_{userid}_petlvlavm};🥚__**`[-I wanna be the very best! II]`**__;;}{if;==;3;{get;_{userid}_petlvlavm};🥚__**`[-I wanna be the very best! III]`**__;;}
+{if;==;1;{get;_{userid}_petfavm};⚔__**`[-Pet Warlord I]`**__;;}{if;==;2;{get;_{userid}_petfavm};⚔__**`[-Pet Warlord II]`**__;;}{if;==;3;{get;_{userid}_petfavm};⚔__**`[-Pet Warlord III]`**__;;}
+{if;==;1;{get;_{userid}_petkavm};☠__**`[-Monst3r K!ll I!]`**__;;}{if;==;2;{get;_{userid}_petkavm};☠__**`[-Monst3r K!ll II!]`**__;;}{if;==;3;{get;_{userid}_petkavm};☠__**`[-Monst3r K!ll III!]`**__;;}
+}
+{if;==;{args;1};info;
+__**<:pets:327208070843203584> Pets Achievements Infos :**__
+
+__**`-[I wanna be the very best..! {if;==;{get;_{userid}_petlvlavm};0;I}{if;==;{get;_{userid}_petlvlavm};1;II}{if;==;{get;_{userid}_petlvlavm};2;III}{if;==;{get;_{userid}_petlvlavm};3;III}]`**__
+    >*Get your Pet Lv. {if;==;{get;_{userid}_petlvlavm};0;3}{if;==;{get;_{userid}_petlvlavm};1;5}{if;==;{get;_{userid}_petlvlavm};2;10}{if;==;{get;_{userid}_petlvlavm};3;10}!*
+__**`-[Pet Warlord {if;==;{get;_{userid}_petfavm};0;I}{if;==;{get;_{userid}_petfavm};1;II}{if;==;{get;_{userid}_petfavm};2;III}{if;==;{get;_{userid}_petfavm};3;III}]`**__
+    >*Fight {if;==;{get;_{userid}_petfavm};0;125}{if;==;{get;_{userid}_petfavm};1;250}{if;==;{get;_{userid}_petfavm};2;500}{if;==;{get;_{userid}_petfavm};3;500} times!*
+__**`-[Monst3r K!ll {if;==;{get;_{userid}_petkavm};0;I}{if;==;{get;_{userid}_petkavm};1;II}{if;==;{get;_{userid}_petkavm};2;III}{if;==;{get;_{userid}_petkavm};3;III}!]`**__
+    >*Kill {if;==;{get;_{userid}_petkavm};0;12}{if;==;{get;_{userid}_petkavm};1;25}{if;==;{get;_{userid}_petkavm};2;50}{if;==;{get;_{userid}_petkavm};3;50} Pets!*
+}
+{if;==;{args;1};stats;
+__<:pets:327208070843203584>**{username}'s Pet Achievements stats :**__
+
+__**`-[I wanna be the very best..! {if;==;{get;_{userid}_petlvlavm};0;I}{if;==;{get;_{userid}_petlvlavm};1;II}{if;==;{get;_{userid}_petlvlavm};2;III}{if;==;{get;_{userid}_petlvlavm};3;III}]`**__
+    > *{get;_{userid}_petlvl}/{if;==;{get;_{userid}_petlvlavm};0;3}{if;==;{get;_{userid}_petlvlavm};1;5}{if;==;{get;_{userid}_petlvlavm};2;10}{if;==;{get;_{userid}_petlvlavm};3;10}*
+__**`-[Pet Warlord {if;==;{get;_{userid}_petfavm};0;I}{if;==;{get;_{userid}_petfavm};1;II}{if;==;{get;_{userid}_petfavm};2;III}{if;==;{get;_{userid}_petfavm};3;III}]`**__
+    > *{get;_{userid}_petfcavm}/{if;==;{get;_{userid}_petfavm};0;125}{if;==;{get;_{userid}_petfavm};1;250}{if;==;{get;_{userid}_petfavm};2;500}{if;==;{get;_{userid}_petfavm};3;500}*
+__**`-[Monst3r K!ll {if;==;{get;_{userid}_petkavm};0;I}{if;==;{get;_{userid}_petkavm};1;II}{if;==;{get;_{userid}_petkavm};2;III}{if;==;{get;_{userid}_petkavm};3;III}!]`**__
+    > *{get;_{userid}_petkcavm}/{if;==;{get;_{userid}_petkavm};0;12}{if;==;{get;_{userid}_petkavm};1;25}{if;==;{get;_{userid}_petkavm};2;50}{if;==;{get;_{userid}_petkavm};3;50}*
+  }
+  }
+}

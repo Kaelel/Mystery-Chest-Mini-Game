@@ -1,0 +1,61 @@
+{if;==;{get;_{userid}_diaavm};;{set;_{userid}_diaavm;0}}
+{if;==;{get;_{userid}_luckyavm};;{set;_{userid}_luckyavm;0}}
+{if;==;{get;_{userid}_pickavm};;{set;_{userid}_pickavm;0}}
+{if;==;{get;_{userid}_mpickavm};;{set;_{userid}_mpickavm;0}}
+{if;==;{get;_{userid}_throwavm};;{set;_{userid}throwavm;0}}
+{if;==;{get;_{userid}_grabavm};;{set;_{userid}_grabavm;0}}
+{if;==;{get;_{userid}_claimavm};;{set;_{userid}_claimavm;0}}
+
+{if;==;{args;0};list;
+__**🏆 {username}'s Achis :**__
+
+{if;==;1;{get;_{userid}_diaavm};💸__**`[-The Great Gatsby I]`**__;;}{if;==;2;{get;_{userid}_diaavm};💸__**`[-The Great Gatsby II]`**__;;}{if;==;3;{get;_{userid}_diaavm};💸__**`[-The Great Gatsby III]`**__;;}
+{if;==;1;{get;_{userid}_claimavm};<:mysterychest:325125261513195521> __**`[-Master Claimer I]`**__;;}{if;==;2;{get;_{userid}_claimavm};<:mysterychest:325125261513195521> __**`[-Master Claimer II]`**__;;}{if;==;3;{get;_{userid}_claimavm};<:mysterychest:325125261513195521> __**`[-Master Claimer III]`**__;;}
+{if;==;1;{get;_{userid}_luckyavm};🍀__**`[-Lucky Charm I]`**__;;}{if;==;2;{get;_{userid}_luckyavm};🍀__**`[-Lucky Charm II]`**__;;}{if;==;3;{get;_{userid}_luckyavm};🍀__**`[-Lucky Charm III]`**__;;}
+{if;==;1;{get;_{userid}_pickavm};<:fairy:322454197691744277>__**`[-Fairy Lord I]`**__}{if;==;2;{get;_{userid}_pickavm};<:fairy:322454197691744277>__**`[-Fairy Lord II]`**__}{if;==;3;{get;_{userid}_pickavm};<:fairy:322454197691744277>__**`[-Fairy Lord III]`**__}
+{if;==;1;{get;_{userid}_mpickavm};<:mammafairy:326115876963221515>__**`[-Mama Mia! I]`**__;;}{if;==;2;{get;_{userid}_mpickavm};<:mammafairy:326115876963221515>__**`[-Mama Mia! II]`**__;;}{if;==;3;{get;_{userid}_mpickavm};<:mammafairy:326115876963221515>__**`[-Mama Mia! III]`**__;;}
+{if;==;1;{get;_{userid}_throwavm};🙏__**`[-Good Sir I]`**__;;}{if;==;2;{get;_{userid}_throwavm};🙏__**`[-Good Sir II]`**__;;}{if;==;3;{get;_{userid}_throwavm};🙏__**`[-Good Sir III]`**__;;}
+{if;==;1;{get;_{userid}_grabavm};🦆__**`[-Uncle Scrooge I]`**__;;}{if;==;2;{get;_{userid}_grabavm};🦆__**`[-Uncle Scrooge II]`**__;;}{if;==;3;{get;_{userid}_grabavm};🦆__**`[-Uncle Scrooge III]`**__;;}
+
+Type `!achi info` for more infos!}
+
+{if;==;{args;0};info;
+__🏆**Achis Infos :**__
+
+__**`-[The Great Gatsby {if;==;{get;_{userid}_diaavm};0;I}{if;==;{get;_{userid}_diaavm};1;II}{if;==;{get;_{userid}_diaavm};2;III}{if;==;{get;_{userid}_diaavm};3;III}]`**__
+    >*Reach {if;==;{get;_{userid}_diaavm};0;250K}{if;==;{get;_{userid}_diaavm};1;500K}{if;==;{get;_{userid}_diaavm};2;1 Million}{if;==;{get;_{userid}_diaavm};3;1 Million} 💎 Diamonds*
+__**`-[Master Claimer {if;==;{get;_{userid}_claimavm};0;I}{if;==;{get;_{userid}_claimavm};1;II}{if;==;{get;_{userid}_claimavm};2;III}{if;==;{get;_{userid}_claimavm};3;III}]`**__
+    >*Claim {if;==;{get;_{userid}_claimavm};0;375}{if;==;{get;_{userid}_claimavm};1;750}{if;==;{get;_{userid}_claimavm};2;1500}{if;==;{get;_{userid}_claimavm};3;1500} Chests!*
+__**`-[Lucky Charm {if;==;{get;_{userid}_luckyavm};0;I}{if;==;{get;_{userid}_luckyavm};1;II}{if;==;{get;_{userid}_luckyavm};2;III}{if;==;{get;_{userid}_luckyavm};3;III}]`**__
+    >*Get {if;==;{get;_{userid}_luckyavm};0;7/7/7 of each chest and 777 💎 Diamonds}{if;==;{get;_{userid}_luckyavm};1;77/77/77 of each chest and 77,777 💎 Diamonds}{if;==;{get;_{userid}_luckyavm};2;777/777/777 of each chest and 777,777 💎 Diamonds}{if;==;{get;_{userid}_luckyavm};3;777/777/777 of each chest and 777,777 💎 Diamonds} at the same time!*
+__**`-[Fairy Lord {if;==;{get;_{userid}_pickavm};0;I}{if;==;{get;_{userid}_pickavm};1;II}{if;==;{get;_{userid}_pickavm};2;III}{if;==;{get;_{userid}_pickavm};3;III}]`**__
+    >*Collect {if;==;{get;_{userid}_pickavm};0;125}{if;==;{get;_{userid}_pickavm};1;250}{if;==;{get;_{userid}_pickavm};2;500}{if;==;{get;_{userid}_pickavm};3;500} Fairies*
+__**`-[Mama Mia! {if;==;{get;_{userid}_mpickavm};0;I}{if;==;{get;_{userid}_mpickavm};1;II}{if;==;{get;_{userid}_mpickavm};2;III}{if;==;{get;_{userid}_mpickavm};3;III}]`**__
+    >*Collect {if;==;{get;_{userid}_mpickavm};0;75}{if;==;{get;_{userid}_mpickavm};1;150}{if;==;{get;_{userid}_mpickavm};2;300}{if;==;{get;_{userid}_mpickavm};3;300} Mamma Fairies*
+__**`-[Good sir {if;==;{get;_{userid}_throwavm};0;I}{if;==;{get;_{userid}_throwavm};1;II}{if;==;{get;_{userid}_throwavm};2;III}{if;==;{get;_{userid}_throwavm};3;III}]`**__
+    >*Throw {if;==;{get;_{userid}_throwavm};0;250}{if;==;{get;_{userid}_throwavm};1;500}{if;==;{get;_{userid}_throwavm};2;1000}{if;==;{get;_{userid}_throwavm};3;1000} 💎 Diamonds on the ground.*
+__**`-[Uncle Scrooge {if;==;{get;_{userid}_grabavm};0;I}{if;==;{get;_{userid}_grabavm};1;II}{if;==;{get;_{userid}_grabavm};2;III}{if;==;{get;_{userid}_grabavm};3;III}]`**__
+    >*Grab {if;==;{get;_{userid}_grabavm};0;125}{if;==;{get;_{userid}_grabavm};1;250}{if;==;{get;_{userid}_grabavm};2;500}{if;==;{get;_{userid}_grabavm};3;500} 💎 Diamonds from the ground.*
+  
+  Type `!achi stats` to see your progression!}
+
+{if;==;{args;0};stats;
+__🏆**{username}'s Achis stats :**__
+
+__**`-[The Great Gatsby {if;==;{get;_{userid}_diaavm};0;I}{if;==;{get;_{userid}_diaavm};1;II}{if;==;{get;_{userid}_diaavm};2;III}{if;==;{get;_{userid}_diaavm};3;III}]`**__
+    > *{get;_{userid}_diamondcount}/{if;==;{get;_{userid}_diaavm};0;250,000}{if;==;{get;_{userid}_diaavm};1;500,000}{if;==;{get;_{userid}_diaavm};2;1,000,000}{if;==;{get;_{userid}_diaavm};3;1 Million}*
+__**`-[Master Claimer {if;==;{get;_{userid}_claimavm};0;I}{if;==;{get;_{userid}_claimavm};1;II}{if;==;{get;_{userid}_claimavm};2;III}{if;==;{get;_{userid}_claimavm};3;III}]`**__
+    > *{get;_{userid}_claimcavm}/{if;==;{get;_{userid}_claimavm};0;375}{if;==;{get;_{userid}_claimavm};1;750}{if;==;{get;_{userid}_claimavm};2;1500}{if;==;{get;_{userid}_claimavm};3;1500}*
+__**`-[Lucky Charm {if;==;{get;_{userid}_luckyavm};0;I}{if;==;{get;_{userid}_luckyavm};1;II}{if;==;{get;_{userid}_luckyavm};2;III}{if;==;{get;_{userid}_luckyavm};3;III}]`**__
+    >{get;_{userid}_woodencount}/{get;_{userid}_silvercount}/{get;_{userid}_titancount}/{get;_{userid}_diamondcount}
+    \{if;==;{get;_{userid}_luckyavm};0;7/7/7/777}{if;==;{get;_{userid}_luckyavm};1;77/77/77/77,777}{if;==;{get;_{userid}_luckyavm};2;777/777/777/777,777}{if;==;{get;_{userid}_luckyavm};3;777/777/777/777,777}
+__**`-[Fairy Lord {if;==;{get;_{userid}_pickavm};0;I}{if;==;{get;_{userid}_pickavm};1;II}{if;==;{get;_{userid}_pickavm};2;III}{if;==;{get;_{userid}_pickavm};3;III}]`**__
+    >*{get;_{userid}_pickcavm}/{if;==;{get;_{userid}_pickavm};0;125}{if;==;{get;_{userid}_pickavm};1;250}{if;==;{get;_{userid}_pickavm};2;500}{if;==;{get;_{userid}_pickavm};3;500}*
+__**`-[Mama Mia! {if;==;{get;_{userid}_mpickavm};0;I}{if;==;{get;_{userid}_mpickavm};1;II}{if;==;{get;_{userid}_mpickavm};2;III}{if;==;{get;_{userid}_mpickavm};3;III}]`**__
+    >*{get;_{userid}_mpickcavm}/{if;==;{get;_{userid}_mpickavm};0;75}{if;==;{get;_{userid}_mpickavm};1;150}{if;==;{get;_{userid}_mpickavm};2;300}{if;==;{get;_{userid}_mpickavm};3;300}*
+__**`-[Good sir {if;==;{get;_{userid}_throwavm};0;I}{if;==;{get;_{userid}_throwavm};1;II}{if;==;{get;_{userid}_throwavm};2;III}{if;==;{get;_{userid}_throwavm};3;III}]`**__
+    >*{get;_{userid}_throwcavm}/{if;==;{get;_{userid}_throwavm};0;250}{if;==;{get;_{userid}_throwavm};1;500}{if;==;{get;_{userid}_throwavm};2;1000}{if;==;{get;_{userid}_throwavm};3;1000}*
+__**`-[Uncle Scrooge {if;==;{get;_{userid}_grabavm};0;I}{if;==;{get;_{userid}_grabavm};1;II}{if;==;{get;_{userid}_grabavm};2;III}{if;==;{get;_{userid}_grabavm};3;III}]`**__
+    >*{get;_{userid}_grabcavm}/{if;==;{get;_{userid}_grabavm};0;125}{if;==;{get;_{userid}_grabavm};1;250}{if;==;{get;_{userid}_grabavm};2;500}{if;==;{get;_{userid}_grabavm};3;500}*
+  
+  Type `!achi list` to see your Unlocked Achievements!}

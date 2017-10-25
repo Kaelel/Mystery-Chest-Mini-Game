@@ -1,0 +1,29 @@
+{if;==;{get;_petowners};;{set;_petowners;[]}}
+{if;==;{get;_{userid}_petcount};;{set;_{userid}_petcount;0}}
+
+__**<:pets:327208070843203584> | Pet owners List :**__
+{sort;{get;_petowners}}
+{if;>;{args;0};1;
+{if;==;{get;_petowners;{math;*;10;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;10;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;11;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;11;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;12;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;12;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;13;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;13;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;14;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;14;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;15;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;15;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;16;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;16;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;17;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;17;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;18;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;18;{math;-;{args;0};1}}}}
+{if;==;{get;_petowners;{math;*;19;{math;-;{args;0};1}}};`Undefined index`;;{get;_petowners;{math;*;19;{math;-;{args;0};1}}}}
+;
+{if;==;{get;_petowners;0};`Undefined index`;;{get;_petowners;0}}
+{if;==;{get;_petowners;1};`Undefined index`;;{get;_petowners;1}}
+{if;==;{get;_petowners;2};`Undefined index`;;{get;_petowners;2}}
+{if;==;{get;_petowners;3};`Undefined index`;;{get;_petowners;3}}
+{if;==;{get;_petowners;4};`Undefined index`;;{get;_petowners;4}}
+{if;==;{get;_petowners;5};`Undefined index`;;{get;_petowners;5}}
+{if;==;{get;_petowners;6};`Undefined index`;;{get;_petowners;6}}
+{if;==;{get;_petowners;7};`Undefined index`;;{get;_petowners;7}}
+{if;==;{get;_petowners;8};`Undefined index`;;{get;_petowners;8}}
+{if;==;{get;_petowners;9};`Undefined index`;;{get;_petowners;9}}
+
+}

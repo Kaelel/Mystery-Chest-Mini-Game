@@ -1,0 +1,39 @@
+{if;==;{get;_{userid}_diamondincr};{get;_{userid}_diamondincr};{set;_{userid}_diamondincr;0}}
+{if;==;{get;_{userid}_questdamage};{get;_{userid}_questdamage};{set;_{userid}_questdamage;0}}
+{if;==;{get;_{userid}_petxpincr};{get;_{userid}_petxpincr};{set;_{userid}_petxpincr;0}}
+
+{if;==;{get;_{userid}_tapscore};1;
+
+{if;==;{get;_{userid}_pos};🏛 Hidden Temple;
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};4}}
+;
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};8}}
+}
+{if;<=;{get;_{userid}_tapcount};10;
+{set;_{userid}_petxpincr;{math;+;{get;_{userid}_petxpincr};{randint;2;5}}}
+{set;_{userid}_questdamage;{math;+;{get;_{userid}_questdamage};{randint;2;4}}}
+{set;_{userid}_diamondincr;{math;+;{get;_{userid}_diamondincr};{randint;50;100}}}
+;
+{set;_{userid}_petxpincr;{math;+;{get;_{userid}_petxpincr};{randint;5;10}}}
+{set;_{userid}_questdamage;{math;+;{get;_{userid}_questdamage};{randint;4;8}}}
+{set;_{userid}_diamondincr;{math;+;{get;_{userid}_diamondincr};{randint;100;200}}}
+}
+
+
+    > You tapped **{get;_{userid}_tapcount}** Times for **{get;_{userid}_tapdamage}** :boom: Damage and the BearKeeper inflicted you **{get;_{userid}_questdamage}** damage during this Hard Training ! <:omg:269247000631967744>
+
+**+ {get;_{userid}_diamondincr}** :gem: Diamonds and **{get;_{userid}_petxpincr}** XP !
+
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_petxpincr}}}
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_{userid}_questdamage}}}
+
+{set;_{userid}_tapscore;0}
+{timer;{set;_{userid}_tapdamage;0}{set;_{userid}_tapcount;0};1s}
+
+
+{execcc;level_up}
+
+
+;You're not into any Quest right now!
+    > Type `!pet quest` to start one !}

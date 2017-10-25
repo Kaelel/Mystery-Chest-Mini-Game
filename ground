@@ -1,0 +1,1 @@
+There's {get;_throwcount} 💎 Diamonds {if;>=;{get;_throwwooden};1;& {get;_throwwooden}<:woodenchest:322454198279208960> Wooden Chests }{if;>=;{get;_throwsilver};1;& {get;_throwsilver}<:silverchest:322454198157443089> Silver Chests }{if;>=;{get;_throwtitan};1;& {get;_throwtitan}<:titanchest:322454197612314626> Titan Chests } on the ground!

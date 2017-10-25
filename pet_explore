@@ -1,0 +1,687 @@
+{if;==;{get;_{userid}_petcount};0;
+You need a <:pets:327208070843203584> **Pet** to Explore the World!;
+{if;<;{get;_{userid}_pethp};12;
+You need at least 12 :hearts: HP to explore !;
+{set;cooldown;{exec;cooldown;300 explore}}
+{if;==;{get;cooldown};true; 
+{set;_{userid}_explorecavm;{math;+;{get;_{userid}_explorecavm};1}}
+{trim;
+{if;==;{get;_{userid}_pos};⛩ North Gate;
+{if;==;{get;_{userid}_qgate};1;
+⛩ The North Gate is open !
+;
+🔐 The North Gate seems locked for now..
+
+{if;>=;{get;_{userid}_petlvl};3;
+{if;<;{get;_{userid}_questcount};5;
+<:umm:255449395468697600> YOU ARE NOT PREPARED !!!
+Complete 5 Quests to prove me your strength!
+
+    > {get;_{userid}_questcount} / 5
+;⛩ The Gates are now Unlocked !
+{set;_{userid}_qgate;1}}}
+}}
+{if;==;{get;_{userid}_pos};⛩ West Gate;
+{if;==;{get;_{userid}_qgate};1;
+⛩ The West Gate is open !
+;
+🔐 The West Gate seems locked for now..
+
+{if;>=;{get;_{userid}_petlvl};3;
+{if;<;{get;_{userid}_questcount};5;
+<:umm:255449395468697600> YOU ARE NOT PREPARED !!!
+Complete 5 Quests to prove me your strength!
+
+    > {get;_{userid}_questcount} / 5
+;⛩ The Gates are now Unlocked !
+{set;_{userid}_qgate;1}}}
+}}
+{if;==;{get;_{userid}_pos};⛩ East Gate;
+{if;==;{get;_{userid}_qgate};1;
+⛩ The East Gate is open !
+;
+🔐 The East Gate seems locked for now..
+
+{if;>=;{get;_{userid}_petlvl};3;
+{if;<;{get;_{userid}_questcount};5;
+<:umm:255449395468697600> YOU ARE NOT PREPARED !!!
+Complete 5 Quests to prove me your strength!
+
+    > {get;_{userid}_questcount} / 5
+;⛩ The Gates are now Unlocked !
+{set;_{userid}_qgate;1}}}
+}}
+{if;==;{get;_{userid}_pos};⛩ South Gate;
+{if;==;{get;_{userid}_qgate};1;
+⛩ The South Gate is open !
+;
+🔐 The South Gate seems locked for now..
+
+{if;>=;{get;_{userid}_petlvl};3;
+{if;<;{get;_{userid}_questcount};5;
+<:umm:255449395468697600> YOU ARE NOT PREPARED !!!
+Complete 5 Quests to prove me your strength!
+
+    > {get;_{userid}_questcount} / 5
+;⛩ The Gates are now Unlocked !
+{set;_{userid}_qgate;1}}}
+}}
+
+{if;==;{get;_{userid}_pos};🏰 Yort Kingdom;
+🏰__**|York Kingdom**__
+
+There's **{get;_mfairycount}** <:mammafairy:326115876963221515> Mama Fairy & **{get;_fairycount}** <:fairy:322454197691744277> Fairies in York Town!
+
+The <:darkshop:329662370169487361> Dark shop is : **{if;==;1;{get;_darkshop};Open !;Closed !}**
+{set;_{userid}_pos;Yort Kingdom}
+ + There's **{get;_throwcount}** 💎 Diamonds {if;>=;{get;_throwwooden};1;& **{get;_throwwooden}**<:woodenchest:322454198279208960> Wooden Chests }{if;>=;{get;_throwsilver};1;& **{get;_throwsilver}**<:silverchest:322454198157443089> Silver Chests }{if;>=;{get;_throwtitan};1;& **{get;_throwtitan}**<:titanchest:322454197612314626> Titan Chests } on the ground!
+}
+{if;==;{get;_{userid}_pos};S-E Watchtower;
+{get;_{userid}_petnick} is in the S-E Watchtower!
+
+All you can see is the wilderness around and the 🌳 giant trees of the Sacred Forest}
+{if;==;{get;_{userid}_pos};N-W Watchtower;
+{get;_{userid}_petnick} is in the N-W Watchtower!
+
+All you can see is the wilderness around and a chain of ⛰️ Mountains}
+{if;==;{get;_{userid}_pos};N-E Watchtower;
+{get;_{userid}_petnick} is in the N-E Watchtower!
+
+All you can see is the wilderness around and a chain of ⛰️ Mountains}
+{if;==;{get;_{userid}_pos};S-W Watchtower;
+{get;_{userid}_petnick} is in the S-W Watchtower!
+
+All you can see is the wilderness around and the 🌳 giant trees of the Sacred Forest}
+{if;==;{get;_{userid}_pos};The Walls;
+You are on the Walls!
+}
+{if;==;{get;_{userid}_pos};🏘 The Slums;
+🏘__**| The Slums**__
+
+🔍 {get;_{userid}_petnick} looked into a 🏡 House, while no one was inside...  
+
+And found.. {randchoose;
+..Nothing :weary:;
+A <:woodenchest:322454198279208960> Wooden Chest !
+{randchoose;
+But it was empty..;
+{set;_{userid}_note;1}
+With a **📄 Note** inside! 
+Type `!note` to read it!;
+{set;_{userid}_relicsincr;{randint;2;5}}
+With **{get;_{userid}_relicsincr}** <:relic:325072418701967375> Relics inside !
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};{get;_{userid}_relicsincr}}}
+{set;_{userid}_relicsincr;0}
+};
+An 📖 Old Book, talking about {randchoose;a lost Temple in the mountains inhabited by... An old tribe of Bears..?;a Sacred Forest in the South, inhabited by <:fairy:322454197691744277> Fairies;the mighty Pet owners that won the previous Pets Tournaments..;weird potions stuff that's beyond any pet's comprehension..;leaks of the last Game of Thrones episode.. :unamused:;the Ultimate Answer of Life, the Universe and Everything..;the legend of a beautiful young girl, fighting Titans with magic..;☠ Pirates tales..};
+{if;>;{get;_throwcount};5;
+{set;_{userid}_diamondincr;{randint;2;5}}
+**{get;_{userid}_diamondincr}** :gem: Diamonds !
+{set;_throwcount;{math;-;{get;_throwcount};{get;_{userid}_diamondincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+}
+;{if;==;{get;_{userid}_piecemap};;{set;_{userid}_piecemap;0}}
+
+{if;==;{get;_{userid}_petmap};0;
+{if;<;{get;_{userid}_piecemap};19;
+{set;_{userid}_piecemap;{math;+;{get;_{userid}_piecemap};1}}
+A 📃 piece of Map ! {get;_{userid}_piecemap} / 20 !
+;{if;==;{get;_{userid}_piecemap};20; You've just completed the :map: Map ! 
+    > Type `!pet map open` to check it!
+}};Nothing... :frowning:}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with 🕷 a Spider!
+{if;>=;{get;_{userid}_petdmg};{randint;2;6};
+{set;_spiderdmg;{randint;2;4}}
+{set;_{userid}_xpincr;{randint;1;3}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_spiderdmg}** ❤ HP and + **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_spiderdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+;The Spider ran away..
+{set;_spiderdmg;{randint;1;2}} 
+
+    > {get;_{userid}_petnick} took **{get;_spiderdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_spiderdmg}}}
+}
+;{if;>;{get;_spancakecount};0;
+an :pancakes: Old Pancake, ew..
+{set;_{userid}_pancakescount;{math;+;{get;_{userid}_pancakescount};1}}
+{set;_spancakecount;{math;-;{get;_spancakecount};1}}
+}
+}
+}{//;The Slums Ends}
+{if;==;{get;_{userid}_pos};🏟 The Arena;
+__**🏟| The Arena**__
+
+{if;==;{get;_tournament};0;
+
+    > The Arena seems closed for now..;
+
+🔓 The Arena has opened ! 
+
+    > Type `!pet_tournament` to join the Pet Tournament !}}
+{if;==;{get;_{userid}_pos};🛤 West Path;
+{get;_{userid}_petname} {get;_{userid}_petnick} is on the 🛤 West Path.}
+{if;==;{get;_{userid}_pos};🛤 East Path;
+{get;_{userid}_petname} {get;_{userid}_petnick} is on the 🛤 East Path.}
+{if;==;{get;_{userid}_pos};🛤 North Path;
+{get;_{userid}_petname} {get;_{userid}_petnick} is on the 🛤 North Path.}
+{if;==;{get;_{userid}_pos};🛤 South Path;
+{get;_{userid}_petname} {get;_{userid}_petnick} is on the 🛤 South Path.}
+
+{if;==;{get;_{userid}_pos};🏞 Sacred Forest Entrance;
+__**🏞| Sacred Forest Entrance**__
+
+    {if;<;{get;_{userid}_petlvl};5;> You can't go in there for now! *(Req.Lv5)*;:warning: Zone Lv. 5}}
+{if;==;{get;_{userid}_pos};🏛 Hidden Temple;
+__**🏛| Hidden Temple**__
+
+**-50%** <:mana:268505067735220224> Mana for Tap Quests as long as you stay here!  
+
+  <:omg:269247000631967744> > Welcome young Hero,
+      That's a nice pet you have there!
+
+{if;==;{get;_{userid}_maxmana};100;    > You can increase your Max Mana Capacity by **+50** by completing 100 Quests ! ({get;_{userid}_questcount}/100);}
+
+}
+{if;==;{get;_{userid}_pos};🏙️ Metalic City;
+__**🏙️| Metalic City**__
+
+**-50%** Mana for Shoot Quests as long as you stay here!
+
+   <:umm:255449395468697600> > Woaah, you look really stronk! 
+    Can you help me? 
+
+{if;==;{get;_{userid}_maxmana};100;    > You can increase your Max Mana Capacity by **+50** by completing 100 Quests ! ({get;_{userid}_questcount}/100);}
+
+}
+{if;==;{get;_{userid}_pos};🏭 The Factory;
+__**🏭 Welcome to The Factory !**__
+
+   🤖 > {if;==;{get;_{userid}_cookierecipe};0;I've heard of an old lady, living in the Sacred Forest who still knows how to make 🍪 Cookies.. !
+Might be worth to look into it!;Type `!p factory` !}
+}
+{if;==;{get;_{userid}_pos};🍭 Candy House;
+__**🍭| The Candy House**__
+
+    > 👵 Welcome, young Hero ! 
+       - Are you hungry ?
+
+{if;==;{get;_{userid}_cookierecipe};0;- Sooo.. You want to learn how to make 🍪 Cookies, Eh!
+I'd be glad to give you the recipe, but.. 
+I'm leaving so far from the Factory that it's been ages since I haven't tasted one of their delicious 🥞 Pancakes ...
+
+    > Bring me back **500 🥞 Pancakes** and I'll give you the **📄 Cookie Recipe** !
+        > Type `!pet quest recipe` to proceed to the exchange!}
+
+*You can smell a delicate perfume of 🍪 cookies fresh out of the hoven...*}
+{if;==;{get;_{userid}_pos};🏕 The Wild;
+🏕__**| The Wild**__
+
+🔍 {get;_{userid}_petnick} explored the Wilderness...  
+
+{randchoose;{get;_{userid}_petname} {get;_{userid}_petnick} found 🏚 an Abandoned House!.. 
+
+
+..With {randchoose;
+nothing inside :weary:;
+A <:woodenchest:322454198279208960> Wooden Chest !
+{randchoose;
+It was a Mimetic! 
+{set;_woodendmg;{randint;2;8}}
+{get;_{userid}_petnick} took {get;_woodendmg} :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_woodendmg}}};
+{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}};
+But it was empty..;
+{set;_{userid}_note;1}
+With a **📄 Note** inside! 
+Type `!note` to read it!;
+{set;_{userid}_relicsincr;{randint;2;6}}
+With **{get;_{userid}_relicsincr}** <:relic:325072418701967375> Relics inside !
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};{get;_{userid}_relicsincr}}}
+{set;_{userid}_relicsincr;0}
+};
+An 📖 Old Book inside, talking about {randchoose;a dungerous cave in the South Forest..;a weird City in the North..;a mysterious little creature summoning Titans with :gem: Diamonds..;a recipe to make :cookie: Cookies..;a large cottage built of gingerbread in the *"everlasting night"* forest..;a glorious legend concerning 3 magical orbs..;mind-controling Titans..;the Factory's Employee of the Month..};
+{if;>;{get;_throwcount};5;
+{set;_{userid}_diamondincr;{randint;2;5}}
+**{get;_{userid}_diamondincr}** :gem: Diamonds inside !
+{set;_throwcount;{math;-;{get;_throwcount};{get;_{userid}_diamondincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+}
+;{if;>;{get;_spancakecount};0;
+an :pancakes: Old Pancake inside, ew..
+{set;_{userid}_pancakescount;{math;+;{get;_{userid}_pancakescount};1}}
+{set;_spancakecount;{math;-;{get;_spancakecount};1}}
+}
+}
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with 🐗 a Wild Boar!
+{if;>=;{get;_{userid}_petdmg};{randint;5;10};
+{set;_boardmg;{randint;2;6}}
+{set;_{userid}_xpincr;{randint;4;8}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_boardmg}** ❤ HP and + **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_boardmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+;The wild Boar ran away..
+{set;_boardmg;{randint;1;3}} 
+
+    > {get;_{userid}_petnick} took **{get;_boardmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_boardmg}}}
+}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} found a pond! 💧 
+{set;_{userid}_manaincr;{randint;1;3}}
+    > + **{get;_{userid}_manaincr}** <:mana:268505067735220224> Mana !
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_manaincr}}}
+
+;{if;==;{get;_nPancakesMonster};1;
+{set;_pancakedmg;{randint;12;25}}
+{set;_{userid}_xpincr;{randint;15;35}}
+{set;_PancakesMonsterHp;{math;-;{get;_PancakesMonsterHp};{get;_{userid}_petdmg}}}
+
+ __**:pancakes: | Pancakes Monster fight :**__
+
+{get;_iPancakesMonster}
+
+    **> {get;_PancakesMonsterHp} / {get;_PancakesMonsterMaxHp} ♥ HP**
+
+⚔ {get;_{userid}_petnick} dealt **{get;_{userid}_petdmg}** Pet Damage {if;==;{get;_{userid}_invincibility};1;! :star2:;and took **{get;_pancakedmg}** 💥 Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_pancakedmg}}}}
+
++ **{round;{math;/;{get;_{userid}_petdmg};2}}** :pancakes: Pancakes & **{get;_{userid}_xpincr}** XP !
+
+{set;_{userid}_pancakescount;{math;+;{get;_{userid}_pancakescount};{round;{math;/;{get;_{userid}_petdmg};2}}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+
+{if;<=;{get;_PancakesMonsterHp};0;
+{set;_nPancakesMonster;0}
+{set;_{userid}_diamondincr;{randint;25000;50000}}
+{set;_{userid}_xpincr;{randint;250;500}}
+{set;~pancakesincr;{randint;125;250}}
+
+☠ ***{username} has just slained {get;_iPancakesMonster} !!!***
+
+You won **{get;_{userid}_diamondincr}** :gem: Diamonds,**{get;~pancakesincr}** :pancakes: Pancakes & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+{set;_{userid}_pancakescount;{math;+;{get;_{userid}_pancakescount};{get;~pancakesincr}}}
+}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} found something Shiny! ✨
+
+{randchoose;But it was nothing.. :weary:;
+{if;>;{get;_throwcount};12;
+{set;_grabincr;{randint;4;12}}
+{get;_{userid}_petname} {get;_{userid}_petnick} grabbed {get;_grabincr} :gem: Diamonds on the ground!
+{set;_throwcount;{math;-;{get;_throwcount};{get;_grabincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_grabincr}}}
+}
+}
+}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} found 🌳 a Fruit Tree!
+{set;_fruitrgn;{randint;2;4}}
+    > {randchoose;🍎;🍊;🍒;🍉;🍑;🍈;🍌;🍐;🍍} + {get;_fruitrgn} ❤ HP !
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{get;_fruitrgn}}}
+
+}}
+
+{if;==;{get;_{userid}_pos};⛰ Mountains;
+{randchoose;There's nothing out there..
+;{get;_{userid}_petname} {get;_{userid}_petnick} fell off the cliff! 
+{set;_falldmg;{randint;2;5}}
+    > {get;_{userid}_petnick} took {get;_falldmg} Damage!
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_falldmg}}}
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with 🐐 a Wild Goat!
+{if;>=;{get;_{userid}_petdmg};{randint;7;12};
+{set;_goatdmg;{randint;4;8}}
+{set;_{userid}_xpincr;{randint;5;10}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_goatdmg}** ❤ HP and + **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_goatdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+;The wild Goat ran away..
+{set;_goatdmg;{randint;2;4}} 
+
+    > {get;_{userid}_petnick} took **{get;_goatdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_goatdmg}}}
+}
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with a <:woodenchest:322454198279208960> Wooden Mimetic! 
+{if;>=;{get;_{userid}_petdmg};{randint;8;13};
+{set;_woodendmg;{randint;5;10}}
+{set;_{userid}_xpincr;{randint;6;12}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_woodendmg}** ❤ HP + **1** <:woodenchest:322454198279208960> Wooden Chest!, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_woodendmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};1}}
+;The Wooden Chest ran away..
+{set;_woodendmg;{randint;3;5}}
+
+    > {get;_{userid}_petnick} took **{get;_woodendmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_woodendmg}}}
+}
+}
+}
+
+{if;==;{get;_{userid}_pos};🏞 Sacred Forest;
+__**🏞| Sacred Forest**__
+
+🔍 {get;_{userid}_petnick} explored the Sacred Forest...  
+
+{randchoose;
+{get;_{userid}_petname} {get;_{userid}_petnick} found a ⛲ Mana Fountain ! 
+
+{set;_{userid}_manaincr;{randint;2;5}}
+    > + **{get;_{userid}_manaincr}** <:mana:268505067735220224> Mana !
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_manaincr}}}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} ate a 🍄 Mushroom!
+
+{set;_fruitrgn;{randint;2;6}}
+    > **+ {get;_fruitrgn} ❤ HP !**
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{get;_fruitrgn}}}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} ate a 🍄 Poisonous Mushroom!
+
+{set;_fruitrgn;{randint;2;4}}
+    > **- {get;_fruitrgn} ❤ HP !**
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_fruitrgn}}}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with a <:silverchest:322454198157443089> Silver Mimetic! 
+{if;>=;{get;_{userid}_petdmg};{randint;12;17};
+{set;_silverdmg;{randint;8;13}}
+{set;_{userid}_xpincr;{randint;10;15}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_silverdmg}** ❤ HP + **1** <:silverchest:322454198157443089> Silver Chest!, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_silverdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Silver Chest ran away..
+{set;_silverdmg;{randint;4;8}}
+
+    > {get;_{userid}_petnick} took **{get;_silverdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_silverdmg}}}
+}
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with an <:fairy:322454197691744277> Angry Fairy! 
+
+{if;>=;{get;_{userid}_petdmg};{randint;8;13};
+{set;_fairydmg;{randint;4;9}}
+{set;_{userid}_xpincr;{randint;6;12}}
+{set;_{userid}_diamondincr;{randint;15;75}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_fairydmg}** ❤ HP + **{get;_{userid}_diamondincr}** 💎 Diamonds!, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_fairydmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+;The angry Fairy ran away..
+{set;_fairydmg;{randint;2;4}} 
+
+    > {get;_{userid}_petnick} took **{get;_fairydmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_fairydmg}}}
+}
+
+}
+}
+{if;==;{get;_{userid}_pos};🚜 The Farms;
+__**🚜| The Farms**__
+{trim;{execcc;p;harvest;}}}
+
+{if;==;{get;_{userid}_pos};⚓ East Port;
+__**⚓| East Port**__
+
+  🐧 > *"Yaar, Hey there Stranger!
+       {randchoose;Have you heard about that secret Pirate cave?..;There's something odd near the 🚜 Farms..;What do you want to buy today?;I haven't heard of any Rumors lately..}}
+
+
+{if;==;{get;_{userid}_pos};🌅 The Ocean;
+__**🌅| The Ocean**__
+
+{if;==;{get;_{userid}_waterorb};;{set;_{userid}_waterorb;0}}
+{if;==;{get;_{userid}_waterorb};0;
+    > You don't know how to swim yet!;
+🔍 {get;_{userid}_petnick} explored the Ocean...  
+
+{randchoose;
+{trim;{set;_{userid}_sunktreasure;{randchoose;💎{set;_{userid}_sunkname;Diamonds}{set;_{userid}_sunkamount;{randint;50;150}}{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_sunkamount}}};<:relic:325072418701967375>{set;_{userid}_sunkname;Relics}{set;_{userid}_sunkamount;{randint;25;75}}{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};{get;_{userid}_sunkamount}}};<:woodenchest:322454198279208960>{set;_{userid}_sunkname;Wooden Chests}{set;_{userid}_sunkamount;{randint;1;3}}{set;_{userid}_woodencount;{math;+;{get;_{userid}_woodencount};{get;_{userid}_sunkamount}}}
+}}
+{get;_{userid}_petname} {get;_{userid}_petnick} found a {get;_{userid}_sunktreasure} Sunken Treasure!
+
+    > + **{get;_{userid}_sunkamount}** {get;_{userid}_sunktreasure} {get;_{userid}_sunkname} !}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} got attacked by 🦀 a Revengeful Crab !
+{set;_crabdmg;{randint;3;6}}
+
+    > {get;_{userid}_petnick} took **{get;_crabdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_crabdmg}}}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} found a 🐟 Mana Fish ! 
+
+{set;_{userid}_manaincr;{randint;3;6}}
+    > + **{get;_{userid}_manaincr}** <:mana:268505067735220224> Mana !
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_manaincr}}}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} found a 🍔 Krabby Patty!
+
+{set;_fruitrgn;{randint;4;8}}
+    > **+ {get;_fruitrgn} ❤ HP !**
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{get;_fruitrgn}}}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with a 🦈 Shark! 
+{if;>=;{get;_{userid}_petdmg};{randint;10;15};
+{set;_sharkdmg;{randint;10;15}}
+{set;_{userid}_xpincr;{randint;7;15}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_sharkdmg}** ❤ HP, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_sharkdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Shark escaped..
+{set;_sharkdmg;{randint;5;8}}
+
+    > {get;_{userid}_petnick} took **{get;_sharkdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_sharkdmg}}}
+}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} fought with an 🐙 Octopus! 
+{if;>=;{get;_{userid}_petdmg};{randint;14;19};
+{set;_sharkdmg;{randint;7;12}}
+{set;_{userid}_xpincr;{randint;12;16}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_sharkdmg}** ❤ HP, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_sharkdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Octopus escaped..
+{set;_sharkdmg;{randint;5;8}}
+
+    > {get;_{userid}_petnick} took **{get;_sharkdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_sharkdmg}}}
+}
+}
+}}
+{if;==;{get;_{userid}_pos};⛩ Dead Mines Entrance;
+__**⛩| Dead Mines Entrance**__
+
+- You've found a secret entrance!
+
+{if;<;{get;_{userid}_petlvl};6;
+{get;_{userid}_petname} {get;_{userid}_petnick} don't have the :trident: Required Level to enter!;
+    > Are you sure you want to enter ?
+     - Type `!dm enter` to enter the ☠ Dead Mines ! 
+
+ :warning: You won't be able to get out before completing the Dungeon !
+}}
+{if;==;{get;_{userid}_pos};☠ The Dead Mines;
+__**☠ The Dead Mines**__
+
+    > You are in the {get;_{userid}_dmroom}th Room of the Dungeon!}
+{if;==;{get;_{userid}_pos};🌄 Dead Mines Exit;
+__**🌄 Dead Mines Exit**__
+
+    > *You can smell the fresh air of the :ocean: Ocean..*}
+{if;==;{get;_{userid}_pos};🏞 The Waterfall;
+__**🏞 The Waterfall**__
+
+{if;==;{get;_{userid}_waterorb};0;
+    > {get;_{userid}_petname} {get;_{userid}_petnick} *doesn't know how to swim yet!..*
+;
+> {get;_{userid}_petname} {get;_{userid}_petnick} found a secret passage!
+{set;cooldown;{exec;cooldown;86400 waterfall}}
+{if;==;{get;cooldown};true;
+
+👴🏽 *"- Hello young Hero! 
+You've find my secret cave, congratulations! 
+> Here's a \☸ Free Spin to use, make a good use of it!*"
+{set;_{userid}_dsspin;{math;+;{get;_{userid}_dsspin};1}}
+;👴🏽 *"- What, you want more? Hehe..
+Alright, alright.. Come back later, I may have more for you!
+
+{execcc;tspan;{get;cooldown}}}
+}}
+{if;==;{get;_{userid}_pos};🏜 Tribe Outpost;
+__**🏜| Tribe Outpost**__
+
+{if;<;{get;_{userid}_petlvl};7;
+    > There's nothing out there.. (Req.Lv7);
+🔍 {get;_{userid}_petnick} explored the Tribe Outpost...  
+
+{randchoose;
+{get;_{userid}_petname} {get;_{userid}_petnick} found a 🌵 Cactus ! 
+
+{set;_fruitrgn;{randint;3;8}}
+{set;_{userid}_manaincr;{randint;2;6}}
+    > + **{get;_fruitrgn}** ❤ HP & **{get;_{userid}_manaincr}** <:mana:268505067735220224> Mana !
+{set;_{userid}_manacount;{math;+;{get;_{userid}_manacount};{get;_{userid}_manaincr}}}
+{set;_{userid}_pethp;{math;+;{get;_{userid}_pethp};{get;_fruitrgn}}}
+
+;{get;_{userid}_petname} {get;_{userid}_petnick} fought with a <:silverchest:322454198157443089> Silver Mimetic! 
+{if;>=;{get;_{userid}_petdmg};{randint;12;17};
+{set;_silverdmg;{randint;8;13}}
+{set;_{userid}_xpincr;{randint;10;15}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_silverdmg}** ❤ HP + **1** <:silverchest:322454198157443089> Silver Chest!, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_silverdmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Silver Chest ran away..
+{set;_silverdmg;{randint;4;8}}
+
+    > {get;_{userid}_petnick} took **{get;_silverdmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_silverdmg}}}
+}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} fought with a 🐍 Sneaky Snake! 
+{if;>=;{get;_{userid}_petdmg};{randint;12;17};
+{set;_snakedmg;{randint;7;15}}
+{set;_{userid}_xpincr;{randint;7;14}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_snakedmg}** ❤ HP, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_snakedmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Snake escaped..
+{set;_snakedmg;{randint;3;7}}
+
+    > {get;_{userid}_petnick} took **{get;_snakedmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_snakedmg}}}
+}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} fought with a 🦂 Poisonous Scorpion! 
+{if;>=;{get;_{userid}_petdmg};{randint;13;18};
+{set;_snakedmg;{randint;8;16}}
+{set;_{userid}_xpincr;{randint;8;16}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_snakedmg}** ❤ HP, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_snakedmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Scorpio escaped..
+{set;_snakedmg;{randint;4;8}}
+
+    > {get;_{userid}_petnick} took **{get;_snakedmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_snakedmg}}}
+}
+;
+{get;_{userid}_petname} {get;_{userid}_petnick} fought against a 🦏 Wild Rhino! 
+{if;>=;{get;_{userid}_petdmg};{randint;15;20};
+{set;_rhinodmg;{randint;10;17}}
+{set;_{userid}_xpincr;{randint;13;19}}
+{get;_{userid}_petnick} managed to kill it! 💀
+    
+    > - **{get;_rhinodmg}** ❤ HP, & **{get;_{userid}_xpincr}** XP !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_rhinodmg}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_xpincr}}}
+{set;_{userid}_silvercount;{math;+;{get;_{userid}_silvercount};1}}
+;The Rhino escaped..
+{set;_rhinodmg;{randint;5;8}}
+
+    > {get;_{userid}_petnick} took **{get;_rhinodmg}** :boom: Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_rhinodmg}}}
+}
+;
+A 🐒 Wild Monkey tried to steal your :gem: Diamonds ! 
+{set;_{userid}_diamondincr;{randint;{get;_{userid}_minpdsteal};{get;_{userid}_maxpdsteal}}}
+{if;>=;{get;_{userid}_petdmg};{randint;12;17};
+{get;_{userid}_petnick} managed to kill it! 💀
+
+    > + {get;_{userid}_diamondincr} :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+;
+The Monkey managed to escaped and stole you {get;_{userid}_diamondincr} :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_diamondincr}}}
+}
+;And found a 📄 Note talking about the Hunt.
+> Type `!pet hunt` for more infos!
+}{//;randchoose ends}
+}}
+{if;==;{get;_{userid}_pos};⛩ Earth Dungeon;
+__**⛩ Earth Dungeon Entrance**__
+
+    > *You can't go in there for now!..*}
+{if;==;{get;_{userid}_pos};⛩ Nyx Treeline Entrance;
+__**⛩ Nyx Treeline Entrance**__
+
+    > The Gate seems :lock: locked for now..}
+{if;==;{get;_{userid}_pos};🗻 Sacred Mountain;
+__**🗻 Sacred Mountain**__
+
+    > *You are on the top of The World!..*}
+{if;==;{get;_{userid}_pos};🌌 Nyx Treeline;
+__**🌌| Nyx Treeline**__
+
+    > There's nothing out there.. (Req.Lv9)}
+{if;==;{get;_{userid}_pos};✴ Twilight Portal;
+__**✴ Twilight Portal**__
+
+    > *{randchoose;It seems very dangerous to stay close to this..;Cracks seems to shatter reality itself..;This is not good..;You can feel evil vibrations coming from the Portal..}*}
+{if;==;{get;_{userid}_pos};🏰 Fay Castle;
+__**🏰 Fay Castle**__
+
+    > *The Fay Guards won't let you in for now..*}
+{if;==;{get;_{userid}_pos};🌋 Deep Underground;
+__**🌋| Deep Underground**__
+
+    > There's nothing out there.. (Req.Lv10)}
+{if;==;{get;_{userid}_pos};⛩ Fire Dungeon;
+__**⛩ Fire Dungeon Entrance**__
+
+    > *You can't go in there for now!..*}
+
+{execcc;level_up}
+
+}{//;Trim Ends}
+;Please, wait {execcc;tspan;{get;cooldown}}, {username} !}
+}}

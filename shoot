@@ -1,0 +1,39 @@
+{if;==;{get;_{userid}_shootquest};;{set;_{userid}_shootquest;0}}
+{if;==;{get;_{userid}_qtimerlock};;{set;_{userid}_qtimerlock;1}}
+{if;==;{get;_{userid}_shootscore};;{set;_{userid}_shootscore;0}}
+{if;==;{get;_{userid}_shootdamage};;{set;_{userid}_shootdamage;0}}
+{if;==;{get;_{userid}_shootincr};;{set;_{userid}_shootincr;0}}
+{if;==;{get;_{userid}_shootcount};;{set;_{userid}_shootcount;0}}
+
+
+{if;==;{get;_{userid}_shootquest};0;<:error:324977067265490954> You're not into any Quest right now!
+    > Type `!pet quest` to start one !;
+
+{if;==;{get;_{userid}_shoottrue};0;There's nothing to shoot!;
+💥
+{set;_{userid}_shoottrue;0}
+{randchoose;**A Titan appeared in the sky ! <:marzx13:272373282349514752>**
+{set;_{userid}_shoottrue;1};
+{timer;**A Titan appeared in the sky ! <:marzx13:272373282349514752>**
+{set;_{userid}_shoottrue;1};{randint;1;3}s};
+{timer;**A Titan appeared in the sky ! <:marzx13:272373282349514752>**
+{set;_{userid}_shoottrue;1};{randint;1;3}s}
+}
+{set;_{userid}_shootcount;{math;+;{get;_{userid}_shootcount};1}}
+{set;_{userid}_shootincr;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}
+{set;_{userid}_shootdamage;{math;+;{get;_{userid}_shootdamage};{get;_{userid}_shootincr}}}
+}
+
+{if;==;{get;_{userid}_qtimerlock};0;
+{timer;
+**⌛ Times up!!!**
+
+    > Type `!shoot_score` to see your Total Damage!
+
+{set;_{userid}_shootscore;1}
+{set;_{userid}_shootquest;0};21s}}
+
+{set;_{userid}_qtimerlock;1}
+{set;_{userid}_shootincr;0}
+
+}

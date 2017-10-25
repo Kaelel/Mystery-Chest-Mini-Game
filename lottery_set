@@ -1,0 +1,24 @@
+{if;==;{args;0};reset;{set;_lotterymembers;[]}{set;_lottery;0}}
+
+{if;==;{args;0};start;
+{if;==;{get;_lottery};1;
+A Lottery is already running!;
+{set;_lottery;1}
+{set;_lotterytimercheck;0}
+**<@&367637854068670465> A Lottery has started !** 
+
+Type `!ds buy ticket` :tickets: to participate! 
+
+    > The Winner takes all the 💎 Diamonds on the ground !
+
+{timer;
+{set;_lotterywinner;{randchoose;_lotterymembers}}
+{set;_lotterybait;{get;_throwcount}}
+**<@{get;_lotterywinner}> won {get;_throwcount} 💎 Diamonds !  👏**
+{set;_{get;_lotterywinner}_diamondcount;{math;+;{get;_{get;_lotterywinner}_diamondcount};{get;_lotterybait}}}
+{set;_throwcount;0}
+{set;_lottery;0}
+{set;_lotterymembers;[]}
+;1d}
+
+}}

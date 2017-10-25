@@ -1,0 +1,28 @@
+{if;==;{get;_{userid}_tapquest};;{set;_{userid}_tapquest;0}}
+{if;==;{get;_{userid}_qtimerlock};;{set;_{userid}_qtimerlock;1}}
+{if;==;{get;_{userid}_tapscore};;{set;_{userid}_tapscore;0}}
+{if;==;{get;_{userid}_tapdamage};;{set;_{userid}_tapdamage;0}}
+{if;==;{get;_{userid}_tapincr};;{set;_{userid}_tapincr;0}}
+{if;==;{get;_{userid}_tapcount};;{set;_{userid}_tapcount;0}}
+
+
+{if;==;{get;_{userid}_tapquest};0;<:error:324977067265490954> You're not into any Quest right now!
+    > Type `!pet quest` to start one !;
+
+{set;_{userid}_tapcount;{math;+;{get;_{userid}_tapcount};1}}
+{set;_{userid}_tapincr;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}
+{set;_{userid}_tapdamage;{math;+;{get;_{userid}_tapdamage};{get;_{userid}_tapincr}}}
+
+{if;==;{get;_{userid}_qtimerlock};0;
+{timer;
+**⌛ Times up!!!**
+
+    > Type `!tap_score` to see your Total Damage!
+
+{set;_{userid}_tapscore;1}
+{set;_{userid}_tapquest;0};2s}}
+
+{set;_{userid}_qtimerlock;1}
+{set;_{userid}_tapincr;0}
+
+}

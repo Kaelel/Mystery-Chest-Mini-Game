@@ -1,0 +1,63 @@
+{if;==;{get;_{userid}_pickcavm};;{set;_{userid}_pickcavm;0}}
+{if;==;{get;_{userid}_pickavm};;{set;_{userid}_pickavm;0}}
+{if;>;{get;_fairycount};12;{set;_fairycount;12}}
+
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;==;{get;_{userid}_mcreg};0; You need to register first, {username} !
+
+    > Type `!mc_reg` to start!;
+
+{set;cooldown;{exec;cooldown;15 Fairy}}
+{if;==;{get;cooldown};true;
+{if;>=;{get;_fairycount};1;
+{set;_fairycount;{math;-;{get;_fairycount};1}}
+{set;_fairytimercheck1;{time;X}}
+{timer;
+{set;_fairycount;{math;+;{get;_fairycount};1}}
+<:fairy:322454197691744277> **A random Fairy appeared!** 
+Type `​​!pick`​​ to pick it up!
+;{randint;8;25}m}
+  {//;This bit is black magic, avoid at all costs
+  {set;_fairyId;{userid}{time;X}{randint;10000;99999}}{inject;{lb}timer{semi}{lb}if{semi}{lb}get{semi}_fairyId{rb}{semi}=={semi}{get;_fairyId}{semi}{lb}execcc{semi}fairypop{rb}{semi}{rb}{semi}{lb}randint{semi}3{semi}12{rb}m{rb}}
+Back to saftey now}
+{set;~{userid}dfairyincr;{randint;15;75}}
+{if;>;{get;~{userid}dfairyincr};75;{set;~{userid}dfairyincr;42}}
+{if;==;{get;~{userid}dfairyincr};0;{set;~{userid}dfairyincr;42}}
+{username} got {get;~{userid}dfairyincr} :gem: Diamonds!
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;~{userid}dfairyincr}}}
+{set;_{userid}_pickcavm;{math;+;{get;_{userid}_pickcavm};1}}
+
+{trim;
+{if;==;0;{get;_{userid}_pickavm};
+{if;>=;{get;_{userid}_pickcavm};125;
+{username} just unlocked the <:fairy:322454197691744277>**"Fairy Lord I!"** Achievement!
+
++ 3 <:fairy:322454197691744277> Fairies appeared!
+{set;_fairycount;{math;+;{get;_fairycount};3}}
+{set;_{userid}_pickavm;1}}}
+{if;==;1;{get;_{userid}_pickavm};
+{if;>=;{get;_{userid}_pickcavm};250;
+{username} just unlocked the <:fairy:322454197691744277>**"Fairy Lord II!"** Achievement!
+
++ 6 <:fairy:322454197691744277> Fairies appeared!
+{set;_fairycount;{math;+;{get;_fairycount};6}}
+{set;_{userid}_pickavm;2}}}
+{if;==;2;{get;_{userid}_pickavm};
+{if;>=;{get;_{userid}_pickcavm};500;
+{username} just unlocked the <:fairy:322454197691744277>**"Fairy Lord III!"** Achievement!
+
++ 12 <:fairy:322454197691744277> Fairies appeared!
+{set;_fairycount;{math;+;{get;_fairycount};12}}
+{set;_{userid}_pickavm;3}}}
+}
+;There's no fairies, {username} :frowning:
+{set;_fairytimercheck2;{time;X}}
+{timer;
+{if;>=;{math;-;{time;X};{get;_fairytimercheck2}};3600;
+{if;>=;{math;-;{time;X};{get;_fairytimercheck}};3600;
+{set;_fairycount;{math;+;{get;_fairycount};1}}}}
+{if;>=;{get;_fairycount};3;{set;_fairycount;1}}
+;1h}
+};Hey {username}, don't spam the Fairies! :eyes:}
+
+}

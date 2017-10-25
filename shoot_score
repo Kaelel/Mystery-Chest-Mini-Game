@@ -1,0 +1,33 @@
+{if;==;{get;_{userid}_shootscore};1;
+{if;==;{get;_{userid}_pos};🏙️ Metalic City;
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};6}}
+;{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};12}}}
+
+{if;<=;{get;_{userid}_shootcount};6;
+{set;~{userid}petxpincr;{randint;10;15}}
+{set;~{userid}questdamage;{randint;8;12}}
+{set;~{userid}diamondincr;{randint;250;500}}
+;
+{set;~{userid}petxpincr;{randint;20;30}}
+{set;~{userid}questdamage;{randint;16;24}}
+{set;~{userid}diamondincr;{randint;600;1000}}
+}
+
+
+    > You shot down **{get;_{userid}_shootcount}** Titans for **{get;_{userid}_shootdamage}** :boom: Damage and took **{get;~{userid}questdamage}** damage during the Fight ! <:umm:255449395468697600>
+
+**+ {get;~{userid}diamondincr}** :gem: Diamonds and **{get;~{userid}petxpincr}** XP !
+
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;~{userid}diamondincr}}}
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;~{userid}petxpincr}}}
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;~{userid}questdamage}}}
+
+{set;_{userid}_shootscore;0}
+{timer;{set;_{userid}_shootdamage;0}{set;_{userid}_shootcount;0};1s}
+
+
+{execcc;level_up}
+
+
+;You're not into any Quest right now!
+    > Type `!pet quest` to start one !}

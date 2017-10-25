@@ -1,0 +1,1786 @@
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏰 Yort Kingdom}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;⛩ East Gate}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;⛩ West Gate}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛩ North Gate}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛩ South Gate}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏘 The Slums}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;S-E Watchtower}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;N-W Watchtower}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;N-E Watchtower}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;S-W Watchtower}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;The Walls}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🛤 West Path}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🛤 West Path}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏟 Arena}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🛤 East Path}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🛤 East Path}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🛤 East Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🛤 North Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🛤 South Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🛤 South Path}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;🏞 Sacred Forest Entrance}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🏛 Hidden Temple}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏭 The Factory}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏙️ Metalic City}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🍭 Candy House}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;⚓ East Port}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🚜 The Farms}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🚜 The Farms}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛩ Dead Mines Entrance}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🌄 Dead Mines Exit}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;⛩ Nyx Treeline Entrance}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🗻 Sacred Mountain}{//;Earth Dungeon Exit}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏞 The Waterfall}{//;Secret Passage}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛩ Earth Dungeon}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏰 Fay Castle}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;⛩ Fire Dungeon}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;✴ Twilight Portal}
+}}
+{//;10}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};10;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{//;9}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🌅 Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};9;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{//;8}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};8;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{//;7}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🌅 The Ocean}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};7;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{//;6}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌌 Nyx Treeline}
+}}
+{if;==;{get;_{userid}_xpos};6;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;Wild}
+{//;5}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};5;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;4}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};4;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;3}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}{//;Woodmill}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};3;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;2}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🛤 Factory Path}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};2;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;1}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🛤 Factory Path}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};1;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;0}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛩ Sacred Forest Entrance}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};0;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;-1}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-1;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;-2}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-2;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;-3}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-3;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{//;-4}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-4;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;-5}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-5;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;-6}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-6;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;-7}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}mm
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-7;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{//;-8}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{if;==;{get;_{userid}_xpos};-8;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{//;-9}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{if;==;{get;_{userid}_xpos};-9;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{//;-10}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};10;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};9;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};8;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};7;
+{set;_{userid}_pos;🏜 Tribe Outpost}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};4;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};3;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};0;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-1;
+{set;_{userid}_pos;🏕 The Wild}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-2;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-3;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-4;
+{set;_{userid}_pos;🏞 Sacred Forest}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-5;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-6;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-7;
+{set;_{userid}_pos;⛰ Mountains}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-8;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-9;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}
+{if;==;{get;_{userid}_xpos};-10;
+{if;==;{get;_{userid}_ypos};-10;
+{set;_{userid}_pos;🌋 Deep Underground}
+}}

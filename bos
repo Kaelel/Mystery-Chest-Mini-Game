@@ -1,0 +1,138 @@
+{if;==;{get;_{userid}_boslvl};;
+{set;_{userid}_boslvl;1}}
+{if;==;{get;_{userid}_bosincr};;
+{set;_{userid}_bosincr;0.25}}
+{if;==;{get;_{userid}_boscost};;
+{set;_{userid}_boscost;125}}
+{set;_{userid}_bostrue;true}
+{if;==;{get;_{userid}_relicscount};;{set;_{userid}_relicscount;0}}
+
+{if;==;{get;_{userid}_relicsavm};;{set;_{userid}_relicsavm;0}}
+{if;==;{get;_{userid}_relicscavm};;{set;_{userid}_relicscavm;0}}
+{if;==;{get;_{userid}_relicsincravm};;{set;_{userid}_relicsincravm;0}}
+{if;==;{get;_{userid}_boslvlavm};;{set;_{userid}_boslvlavm;0}}
+
+
+{if;==;{get;_bosldb};;{set;_bosldb;[]}}
+
+{if;>=;{get;_{userid}_boslvl};12;
+{if;==;-1;{indexof;{get;_{userid}_bosreg};{get;_{userid}_boslvl}};
+{if;>=;{indexof;{get;_bosldb};{get;_{userid}_bosreg}};0;
+{void;{splice;{get;_bosldb};{indexof;{get;_bosldb};{get;_{userid}_bosreg}};1}}}
+{set;_{userid}_bosreg;{get;_{userid}_boslvl} | {username} {newline}}
+{push;{get;_bosldb};{get;_{userid}_bosreg}}
+}}
+
+
+{switch;{args;0}
+
+;ldb;
+<:bos:258557013330624512>__**| Book of Shadows Leaderboard :**__
+
+**Top 10 Levels :** 
+{sort;{get;_bosldb};descending}
+🥇 | {if;==;{get;_bosldb;0};`Undefined index`;;{get;_bosldb;0}}
+🥈 | {if;==;{get;_bosldb;1};`Undefined index`;;{get;_bosldb;1}}
+🥉 | {if;==;{get;_bosldb;2};`Undefined index`;;{get;_bosldb;2}}
+**4th |** {if;==;{get;_bosldb;3};`Undefined index`;;{get;_bosldb;3}}
+**5th |** {if;==;{get;_bosldb;4};`Undefined index`;;{get;_bosldb;4}}
+**6th |** {if;==;{get;_bosldb;5};`Undefined index`;;{get;_bosldb;5}}
+**7th |** {if;==;{get;_bosldb;6};`Undefined index`;;{get;_bosldb;6}}
+**8th |** {if;==;{get;_bosldb;7};`Undefined index`;;{get;_bosldb;7}}
+**9th |** {if;==;{get;_bosldb;8};`Undefined index`;;{get;_bosldb;8}}
+**10th |** {if;==;{get;_bosldb;9};`Undefined index`;;{get;_bosldb;9}}
+
+
+
+;stats;
+<:bos:258557013330624512>__**| Welcome to the Book of Shadow Mini-Game!**__
+
+You have **{ceil;{get;_{userid}_relicscount}}** <:relic:325072418701967375> **Relics !**
+
+<:bos:258557013330624512> **Lv.{get;_{userid}_boslvl}** (x{get;_{userid}_bosincr})
+
+**Next Level cost :** {ceil;{get;_{userid}_boscost}} <:relic:325072418701967375> Relics
+
+Type `!bos up` to upgrade your Artifact!
+
+{trim;
+{if;==;{get;_{userid}_relicsavm};0;
+{if;>=;{get;_{userid}_relicscount};25000;
+{username} just unlocked the <:relic:325072418701967375>**"Hoarder I!"** Achievement!
+
++ 2500 <:relic:325072418701967375> Relics !
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};2500}}
+  {set;_{userid}_relicsavm;1}}}
+
+{if;==;{get;_{userid}_relicsavm};1;
+{if;>=;{get;_{userid}_relicscount};50000;
+{username} just unlocked the <:relic:325072418701967375>**"Hoarder II!"** Achievement!
+
++ 5000 <:relic:325072418701967375> Relics !
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};5000}}
+  {set;_{userid}_relicsavm;2}}}
+
+{if;==;{get;_{userid}_relicsavm};2;
+{if;>=;{get;_{userid}_relicscount};100000;
+{username} just unlocked the <:relic:325072418701967375>**"Hoarder III!"** Achievement!
+
++ 10,000 <:relic:325072418701967375> Relics !
+{set;_{userid}_relicscount;{math;+;{get;_{userid}_relicscount};10000}}
+  {set;_{userid}_relicsavm;3}}}
+}
+;up;
+{if;<=;{get;_{userid}_relicscount};{get;_{userid}_boscost};
+  You don't have enough relics to upgrade your Book of Shadow!;
+{set;_{userid}_relicscount;{math;-;{get;_{userid}_relicscount};{get;_{userid}_boscost}}}
+{set;_{userid}_boslvl;{math;+;{get;_{userid}_boslvl};1}}
+{set;_{userid}_bosincr;{math;*;{get;_{userid}_bosincr};1.05}}
+{set;_{userid}_boscost;{math;*;{get;_{userid}_boscost};1.25}}
+Your <:bos:258557013330624512> Book of Shadow is now Level **{get;_{userid}_boslvl}** !
+
+{trim;
+{if;==;{get;_{userid}_boslvlavm};0;
+{if;>=;{get;_{userid}_boslvl};15;{username} just unlocked the <:bos:258557013330624512>**"Knight of Shadows!"** Achievement!
+
++ 12K5 :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};12500}}
+{set;_{userid}_boslvlavm;1}}}
+
+{if;==;{get;_{userid}_boslvlavm};1;
+{if;>=;{get;_{userid}_boslvl};30;{username} just unlocked the <:bos:258557013330624512>**"Master of Shadows!"** Achievement!
+
++ 25K :gem: Diamonds !
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};25000}}
+{set;_{userid}_boslvlavm;2}}}
+}}
+;achi;
+{if;==;{args;1};info;
+
+__**<:bos:258557013330624512>BoS Achievements Infos :**__
+
+__**`-[{if;==;{get;_{userid}_boslvlavm};0;Knight}{if;==;{get;_{userid}_boslvlavm};1;Master}{if;==;{get;_{userid}_boslvlavm};2;Master} of Shadows]`**__
+    >*Get BoS Lv. {if;==;{get;_{userid}_boslvlavm};0;15}{if;==;{get;_{userid}_boslvlavm};1;30}{if;==;{get;_{userid}_boslvlavm};2;30}!*
+__**`-[Hoarder {if;==;{get;_{userid}_relicsavm};0;I}{if;==;{get;_{userid}_relicsavm};1;II}{if;==;{get;_{userid}_relicsavm};2;III}{if;==;{get;_{userid}_relicsavm};3;III}]`**__
+    >*Collect {if;==;{get;_{userid}_relicsavm};0;25}{if;==;{get;_{userid}_relicsavm};1;50}{if;==;{get;_{userid}_relicsavm};2;100}{if;==;{get;_{userid}_relicsavm};3;100}K Relics in total!*
+__**`-[The Evil Within]`**__
+    >*Collect 666 Relics at once!*
+  }
+
+{if;==;{args;1};list;
+__**<:bos:258557013330624512> {username}'s BoS Achievements :**__
+
+{if;==;1;{get;_{userid}_boslvlavm};<:bos:258557013330624512>__**`[-Knight of Shadows]`**__;;}{if;==;2;{get;_{userid}_boslvlavm};<:bos:258557013330624512>__**`[-Master of Shadows]`**__;;}
+{if;==;1;{get;_{userid}_relicsavm};<:relic:325072418701967375>__**`[-Hoarder I]`**__;;}{if;==;2;{get;_{userid}_relicsavm};<:relic:325072418701967375>__**`[-Hoarder II]`**__;;}{if;==;3;{get;_{userid}_relicsavm};<:relic:325072418701967375>__**`[-Hoarder III]`**__;;}
+{if;==;1;{get;_{userid}_relicsincravm};👿__**`[-The Evil within]`**__;;}
+  }
+
+{if;==;{args;1};stats;
+__<:bos:258557013330624512>**{username}'s BoS Achievements stats :**__
+
+__**`-[{if;==;{get;_{userid}_boslvlavm};0;Knight}{if;==;{get;_{userid}_boslvlavm};1;Master}{if;==;{get;_{userid}_boslvlavm};2;Master} of Shadows]`**__
+    > *{get;_{userid}_boslvl}/{if;==;{get;_{userid}_boslvlavm};0;15}{if;==;{get;_{userid}_boslvlavm};1;30}{if;==;{get;_{userid}_boslvlavm};2;30}*
+__**`-[Hoarder {if;==;{get;_{userid}_relicsavm};0;I}{if;==;{get;_{userid}_relicsavm};1;II}{if;==;{get;_{userid}_relicsavm};2;III}{if;==;{get;_{userid}_relicsavm};3;III}]`**__
+    > *{ceil;{get;_{userid}_relicscount}}/{if;==;{get;_{userid}_relicsavm};0;25,000}{if;==;{get;_{userid}_relicsavm};1;50,000}{if;==;{get;_{userid}_relicsavm};2;100,000}{if;==;{get;_{userid}_relicsavm};3;100,000}*
+__**`-[The Evil Within]`**__
+    > *{if;==;0;{get;_{userid}_relicsincravm};{ceil;{get;_{userid}_relicsincr}};666}/666*
+  }
+}

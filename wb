@@ -1,0 +1,105 @@
+{if;==;{get;_wbhp};;{set;_wbhp;0}}
+{if;==;{get;_wbdmg};;{set;_wbdmg;0}}
+{if;==;{get;_wbrwd};;{set;_wbrwd;0}}
+{if;==;{get;_wbmaxhp};;{set;_wbmaxhp;0}}
+{if;==;{get;_wbcount};;{set;_wbcount;0}}
+{if;==;{get;_wbtimer};;{set;_wbtimer;0}}
+{if;==;{get;_{userid}_wbxpincr};;{set;_{userid}_wbxpincr;0}}
+{if;==;{get;_{userid}_wbrxpincr};;{set;_{userid}_wbrxpincr;0}}
+{if;==;{get;_{userid}_wbdiamondincr};;{set;_{userid}_wbdiamondincr;0}}
+{if;==;{get;_{userid}_wbrdiamondincr};;{set;_{userid}_wbrdiamondincr;0}}
+{if;==;{get;_{userid}_wbcount};;{set;_{userid}_wbcount;0}}
+{if;==;{get;_{userid}_wbrwd};;
+{set;_{userid}_wbrwd;0}}
+{if;==;{get;_{userid}_petdmg};;{set;_{userid}_petdmg;{randint;{get;_{userid}_petmindmg};{get;_{userid}_petmaxdmg}}}}
+{if;>=;{get;_{userid}_wbcount};1;{set;_{userid}_wbrwd;1}}
+
+{if;==;{get;_{userid}_mcreg};;{set;_{userid}_mcreg;0}}
+{if;==;{get;_{userid}_mcreg};0; You need to register first, {username} !
+
+    > Type `!mc_reg` to start!;
+
+{if;==;{args;0};fight;
+{if;==;{get;_wbhp};0;
+ <:rip:269246519381590026> The World Boss is dead, come back *soon:tm:* to fight again!
+
+    > Type `!wb reward` if you fought in the previous battle to claim your Rewards ! :gem:
+;
+
+{if;==;{get;_{userid}_petcount};0;You need a <:pets:327208070843203584> **Pet** to fight the World Boss!;
+{if;<;{get;_{userid}_pethp};50;Require **50 ♥ HP** min.;
+{if;<;{get;_{userid}_manacount};25;You need at least **25 <:mana:268505067735220224> Mana** to fight the World Boss!;
+{set;cooldown;{exec;cooldown;3600 wb}}
+{if;==;{get;cooldown};true;
+
+{set;_{userid}_manacount;{math;-;{get;_{userid}_manacount};25}}
+{set;_wbdmg;{randint;25;50}}
+{set;_wbhp;{math;-;{get;_wbhp};{get;_{userid}_petdmg}}}
+
+ __**<:TimerOh:334815692249497600>| World Boss fight :**__
+
+**💀 {get;_wb}'s Health 💀**
+
+    **> {get;_wbhp} / {get;_wbmaxhp} ♥ HP**
+
+⚔ {get;_{userid}_petnick} dealt **{get;_{userid}_petdmg}** Pet Damage {if;==;{get;_{userid}_invincibility};1;! :star2:;and took **{get;_wbdmg}** 💥 Damage !
+{set;_{userid}_pethp;{math;-;{get;_{userid}_pethp};{get;_wbdmg}}}}
+
+{set;_wbcount;{math;+;{get;_wbcount};1}}
+{set;_{userid}_wbcount;{math;+;{get;_{userid}_wbcount};1}}
+
+{execcc;wb_kill}
+
+;You need to wait : {execcc;tspan;{get;cooldown}} to attack the 💀 World Boss again!}}}}
+}
+;
+
+{if;==;{args;0};reward;
+{if;==;{get;_wbrwd};0;
+The World Boss is still alive!
+There's no Rewards to claim {username} !;
+{if;==;{get;_{userid}_wbrwd};0;
+You have no Rewards to claim {username} !;
+{trim;
+{set;_{userid}_wbrdiamondincr;{math;*;{get;_{userid}_wbcount};{randint;750;1850}}}
+{set;_{userid}_wbrxpincr;{math;*;{get;_{userid}_wbcount};{randint;35;85}}}
+
+**{username}** got **{get;_{userid}_wbrdiamondincr}** :gem: Diamonds and **{get;_{userid}_wbrxpincr}** XP !
+
+{set;_{userid}_petxp;{math;+;{get;_{userid}_petxp};{get;_{userid}_wbrxpincr}}}
+{set;_{userid}_diamondcount;{math;+;{get;_{userid}_diamondcount};{get;_{userid}_wbrdiamondincr}}}
+
+{set;_{userid}_wbrwd;0}
+{set;_{userid}_wbcount;0}
+{set;_{userid}_diamondincr;0}
+{set;_{userid}_xpincr;0}
+
+{execcc;level_up}}
+}}
+
+{//;Wb}
+;
+{if;==;{get;_wbhp};0;
+
+{if;==;{get;_wbtimercheck};0;
+{set;_wbtimercheck;1}
+{set;_wbtimer;{math;+;{time;X};86400}}
+;
+ <:rip:269246519381590026> The World Boss is dead, come back in {execcc;tspan;{math;-;{get;_wbtimer};{time;X}}} to fight again!
+}
+
+    > Type `!wb reward` if you fought in the previous battle to claim your Rewards ! :gem:
+;
+ __**<:TimerOh:334815692249497600>| World Boss fight :**__
+
+**💀 {get;_wb}'s Health 💀**
+
+    **> {get;_wbhp} / {get;_wbmaxhp}  ♥ HP** 
+
+
+⚔ **{get;_wbcount}** Pets Attacked so far!
+{if;==;{get;_{userid}_petcount};1;{get;_{userid}_petname} {get;_{userid}_petnick} attacked **{get;_{userid}_wbcount}** times!;}
+}
+}{//;Reward}
+}{//;Fight}
+}
